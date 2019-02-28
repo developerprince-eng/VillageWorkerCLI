@@ -1,0 +1,20 @@
+{
+  "name": "villageworkcli-work",
+  "version": "1.0.0",
+  "description": "VillageWork Command Line Interface",
+  "main": "index.js",
+  "bin": {
+    "villageworkcli": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "villagework"
+  ],
+  "author": "Developer Princee",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.19.0"
+  }
+}
