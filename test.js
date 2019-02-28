@@ -13,3 +13,4 @@
 let ng6 = require(`./platforms/nodejs`)
 
 ng6.ndjs.angular(`prince`)
+

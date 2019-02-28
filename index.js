@@ -1,13 +1,15 @@
 #!/usr/bin/env node
+// const path = require(`path`);
+// const fs = require(`fs`);
 
-const program = require('commander');
-const path = require('path')
-const fs = require('fs');
+const program = require(`commander`);
+const nd = require(`./platforms/nodejs/index`);
 
 
 program
-    .version(`1.0.0`, `-v, --version`)
-    .description(`Project Scafolding for Project`)
+    .version(`1.0.0`, `-v, --version`);
+    .description(`Project Scafolding for Project`);
+
 
 //This is for Scafolding a project
 program
@@ -18,8 +20,8 @@ program
          console.log(`\x1b[36m%s\x1b[0m`, name, `Web Application Scafolded Successfully...\n`,
         `\x1b[33m`,
         `Enjoy!!!`,
-        `\x1b[0m`)
-    })
+        `\x1b[0m`);
+    });
 
 program
     .command(`mobile <name>`)
@@ -30,6 +32,20 @@ program
         `\x1b[33m`,
         `Enjoy!!!`,
         `\x1b[0m`)
-    })
+    });
+
+program
+    .command(`web <name`)
+    .option(`-g --generate`, `Trigger Generation Operation`)
+    .option(`-P --project`)
+    .option(`-p --platform <platform>`, `State the Platform of development`)
+    .option(`--view -v <view>`, `Seletct View Templating Engine`)
+    .action( (name, view, platform) => {
+        if(platform == `nodejs`) => {
+            if(view == `angular`){
+                nd.ndjs.angular(name, view);
+            }
+        }
+    });
 
 program.parse(process.argv);
