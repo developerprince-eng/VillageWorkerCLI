@@ -13,7 +13,7 @@ let options = {
     angular: `install -g @angular/cli`,
     newng: `ng new`,
     newreact:`npx create-react-app`,
-    vue: `npm i create-vue-app -g`,
+    vue: `i create-vue-app -g`,
     newvue: `create-vue-app`
 };
 
