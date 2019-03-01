@@ -16,5 +16,8 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.19.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1"
   }
 }
