@@ -17,10 +17,6 @@ program
     .option(`--project -p`)
     .action((name) => {
         nd.ndjs.emptypro(name);
-        console.log(`\x1b[36m%s\x1b[0m`, name, `Web Application Scafolded Successfully...\n`,
-        `\x1b[33m`,
-        `Enjoy!!!`,
-        `\x1b[0m`);
     });
 
 program
@@ -35,7 +31,7 @@ program
     });
 
 program
-    .command(`web <name`)
+    .command(`web <name>`)
     .option(`-g --generate`, `Trigger Generation Operation`)
     .option(`-P --project`)
     .option(`-p --platform <platform>`, `State the Platform of development`)
@@ -43,7 +39,13 @@ program
     .action( (name, view, platform) => {
         if(platform == `nodejs`) {
             if(view == `angular`){
-                nd.ndjs.angular(name, view);
+                nd.ndjs.angular(name)
+            }
+            if( view == `vue`) {
+                nd.ndjs.vue(name)
+            }
+            if( view == `react`) {
+                nd.ndjs.react(name)
             }
         }
     });

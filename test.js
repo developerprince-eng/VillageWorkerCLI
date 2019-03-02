@@ -1,16 +1,26 @@
-//  const path = require('path')
-// const fs = require('fs');
+const program = require(`commander`)
+const nd = require(`./platforms/nodejs/index`)
 
-// let messages_path = path.join(__dirname, `/messages`, `/welcome.text`);
-// console.log(messages_path);
+program
+  .version(`0.0.1`, `-v --version`)
 
-// console.log(typeof messages_path);
-// fs.readFile(messages_path , 'utf8' ,(err, data) => {
-//     if(err) throw err;
-//     console.log(data);
-// })
+program
+  .command(`vwcli <name>`)
+  .option(`-g --generate`, `Trigger Generate Operation`)
+  .option(`--project -p`)
+  .action((name) => {
+    nd.ndjs.emptypro(name);
+  })
+program.parse(process.argv);
+// process.stdin.setEncoding('utf8');
 
-let ng6 = require(`./platforms/nodejs`)
+// process.stdin.on('readable', () => {
+//   const chunk = process.stdin.read();
+//   if (chunk !== null) {
+//     process.stdout.write(`data: ${chunk}`);
+//   }
+// });
 
-ng6.ndjs.angular(`prince`)
-
+// process.stdin.on('end', () => {
+//   process.stdout.write('end');
+// });
