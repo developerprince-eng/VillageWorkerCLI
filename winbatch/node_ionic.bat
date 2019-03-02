@@ -1,7 +1,7 @@
 @ECHO OFF
 ECHO. 
 @ECHO ****************************************
-@ECHO ********* CREATING AN PROJECT **********
+@ECHO ******* CREATING A NEW PROJECT *********
 @ECHO ****************************************
 @ECHO "Setting Up Ionic ==> npm install -g ionic"
 call npm install -g ionic

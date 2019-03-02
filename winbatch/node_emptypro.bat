@@ -1,7 +1,7 @@
 @ECHO OFF
 ECHO. 
 @ECHO ****************************************
-@ECHO ********* CREATING AN PROJECT **********
+@ECHO ******* CREATING A NEW PROJECT *********
 @ECHO ****************************************
 mkdir %1\models
 mkdir %1\controllers

@@ -1,7 +1,7 @@
 @ECHO OFF
 ECHO. 
 @ECHO ****************************************
-@ECHO ********* CREATING AN PROJECT **********
+@ECHO ******* CREATING A NEW PROJECT *********
 @ECHO ****************************************
 @ECHO "Creating a Reac App: "
 call npx create-react-app %1
