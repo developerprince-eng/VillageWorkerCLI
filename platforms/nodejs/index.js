@@ -26,7 +26,6 @@ let emptypro = (name) => {
     
             if(stderr) console.log(`Error occured: \n`, stderr)
             
-            
             if(stdout) {
                 console.log(`Scaffolding: \n\x1b[33m`, stdout)
                 websuccess(name)
