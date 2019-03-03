@@ -10,7 +10,25 @@ The Current Version which is version 1.0.0 is still in is Alpha form therefore y
 
 Currently the only operating system which allows for Scaffolding is Win32 OS , Currently we working on a Unix support which utillizes the darwin environment. 
 
+###Requirements
+
+Before You rock on using some crazy project automation, you need the following to be set up 
+
+1.) node and npm should be installed (Assumptions is you are viewing this from npm js you probably have that setup) [nodejs.org](https://nodejs.org/en/)
+
+2.) The Next the you need to set up is hub for github cli and automation  install scoop for windows using powershell 
+```bash
+
+ [environment]::setEnvironmentVariable('SCOOP','C:\Applications\Scoop','User')
+ $env:SCOOP='C:\Applications\Scoop'
+ iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+ scoop install hub
+
+ ```
+---
+
 ###Win32 Commands Using Powershell or CMD
+
 
 ```bash
 villageworkcli web <project name> --generate --project 

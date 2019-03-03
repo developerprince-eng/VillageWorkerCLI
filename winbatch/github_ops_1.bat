@@ -1,8 +1,4 @@
-call [environment]::setEnvironmentVariable('SCOOP','C:\Applications\Scoop','User')
-call $env:SCOOP='C:\Applications\Scoop'
-call iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
-ECHO Setting and Install Github CommandLine Interface
-call scoop install hub
+
 ECHO ****************************************
 ECHO  Now Lets Do Magic using Hub to Access Github
 ECHO ****************************************

@@ -40,27 +40,9 @@ let emptypro = (name) => {
             
             if(stdout) {
                 console.log(`Scaffolding: \n\x1b[33m`, stdout)
-            }
-        })  
-
-        cp.exec(`powershell`, (err, stdout, stderr) => {
-            if(err) throw err 
-    
-            if(stderr) console.log(`Error occured: \n`, stderr)
-    
-            if(stdout) console.log(`Switching to Powershell: \n`, stdout)
-        })
-
-        cp.exec(`winbatch\\github_ops_1.bat`, (err, stdout, stderr) => {
-            if(err) throw err
-
-            if(stderr) console.log(`Error occured: \n`, stderr)
-
-            if(stdout) {
-                console.log(`GitHub Repo Action: \n\x1b[33m`, stdout)
                 websuccess(name)
             }
-        })
+        })  
     }
 }
 
@@ -75,27 +57,9 @@ let angular = (name)=> {
             
             if(stdout) {
                 console.log(`Scaffolding: \n\x1b[33m`, stdout)
-            }
-        }) 
-
-        cp.exec(`powershell`, (err, stdout, stderr) => {
-            if(err) throw err 
-    
-            if(stderr) console.log(`Error occured: \n`, stderr)
-    
-            if(stdout) console.log(`Switching to Powershell: \n`, stdout)
-        })
-
-        cp.exec(`winbatch\\github_ops_1.bat`, (err, stdout, stderr) => {
-            if(err) throw err
-
-            if(stderr) console.log(`Error occured: \n`, stderr)
-
-            if(stdout) {
-                console.log(`GitHub Repo Action: \n\x1b[33m`, stdout)
                 websuccess(name)
             }
-        })
+        }) 
     }
 }
 
@@ -109,27 +73,9 @@ let react = (name)=> {
         
         if(stdout) {
             console.log(`Scaffolding: \n\x1b[33m`, stdout)
-        }
-    }) 
-
-    cp.exec(`powershell`, (err, stdout, stderr) => {
-        if(err) throw err 
-
-        if(stderr) console.log(`Error occured: \n`, stderr)
-
-        if(stdout) console.log(`Switching to Powershell: \n`, stdout)
-    })
-
-    cp.exec(`winbatch\\github_ops_1.bat`, (err, stdout, stderr) => {
-        if(err) throw err
-
-        if(stderr) console.log(`Error occured: \n`, stderr)
-
-        if(stdout) {
-            console.log(`GitHub Repo Action: \n\x1b[33m`, stdout)
             websuccess(name)
         }
-    })
+    }) 
 };
 
 //Scafold Vue Application
@@ -142,27 +88,9 @@ let vue = (name)=> {
         
         if(stdout) {
             console.log(`Scaffolding: \n\x1b[33m`, stdout)
-        }
-    }) 
-
-    cp.exec(`powershell`, (err, stdout, stderr) => {
-        if(err) throw err 
-
-        if(stderr) console.log(`Error occured: \n`, stderr)
-
-        if(stdout) console.log(`Switching to Powershell: \n`, stdout)
-    })
-
-    cp.exec(`winbatch\\github_ops_1.bat`, (err, stdout, stderr) => {
-        if(err) throw err
-
-        if(stderr) console.log(`Error occured: \n`, stderr)
-
-        if(stdout) {
-            console.log(`GitHub Repo Action: \n\x1b[33m`, stdout)
             websuccess(name)
         }
-    })
+    }) 
 }
 
 let mobile = (name) => {
@@ -174,27 +102,9 @@ let mobile = (name) => {
         
         if(stdout) {
             console.log(`Scaffolding: \n\x1b[33m`, stdout)
-        }
-    }) 
-
-    cp.exec(`powershell`, (err, stdout, stderr) => {
-        if(err) throw err 
-
-        if(stderr) console.log(`Error occured: \n`, stderr)
-
-        if(stdout) console.log(`Switching to Powershell: \n`, stdout)
-    }) 
-
-    cp.exec(`winbatch\\github_ops_1.bat`, (err, stdout, stderr) => {
-        if(err) throw err
-
-        if(stderr) console.log(`Error occured: \n`, stderr)
-
-        if(stdout) {
-            console.log(`GitHub Repo Action: \n\x1b[33m`, stdout)
             websuccess(name)
         }
-    })
+    }) 
 }
 exports.ndjs =  { angular, react , vue, emptypro, mobile, pwshell}
 
