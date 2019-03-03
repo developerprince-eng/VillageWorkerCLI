@@ -6,7 +6,6 @@ call scoop install hub
 ECHO ****************************************
 ECHO  Now Lets Do Magic using Hub to Access Github
 ECHO ****************************************
-call git init 
 call git add .
 call git commit -m "Initial Commit, Using VillageWorkCLI"
 call hub create
