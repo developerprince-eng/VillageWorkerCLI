@@ -13,7 +13,7 @@ program
 //This is for Scafolding a project
 program
     .command(`web <name>`) 
-    .option(`-g --generatee`, `Trigger Generation Operation`)
+    .option(`-g --generate`, `Trigger Generation Operation`)
     .option(`--project -p`)
     .action((name) => {
         nd.ndjs.emptypro(name);
@@ -21,7 +21,7 @@ program
 
 program
     .command(`mobile <name>`)
-    .option(`-g --generatee`, `Trigger Generation Operation`)
+    .option(`-g --generate`, `Trigger Generation Operation`)
     .option(`--project -p `)
     .action(name => {
         console.log(`\x1b[36m%s\x1b[0m`, name, `Mobile Application Scafolded Successfully...\n`,
