@@ -16,7 +16,7 @@ Before You rock on using some crazy project automation, you need the following t
 
 1.) node and npm should be installed (Assumptions is you are viewing this from npm js you probably have that setup) [nodejs.org](https://nodejs.org/en/)
 
-2.) The Next the you need to set up is hub for github cli and automation  install scoop for windows using powershell 
+2.) The Next step is you need to set up is hub for github cli an automation  cli, install scoop for windows using powershell 
 ```bash
 
  [environment]::setEnvironmentVariable('SCOOP','C:\Applications\Scoop','User')
@@ -31,9 +31,15 @@ Before You rock on using some crazy project automation, you need the following t
 
 
 ```bash
+
+##Empty MVC Project:
 villageworkcli web <project name> --generate --project 
-villageworkcli web <project name> --generate --project --platform --view <view type>
-villageworkcli mobile <project name> --generate --project
+
+##Platform Projects
+villageworkcli web <project name> --generate --project --platform --view <view type> 
+
+##Empty Mobile Application
+villageworkcli mobile <project name> --generate --project 
 ```
 
 ## Contact 

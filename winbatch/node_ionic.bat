@@ -5,7 +5,7 @@ ECHO.
 @ECHO ****************************************
 @ECHO "Setting Up Ionic ==> npm install -g ionic"
 call npm install -g ionic
-@ECHO "Creating an Vue App: "
+@ECHO "Creating an Ionic App: "
 call ionic %1 Blank
 ECHO ****************************************
 ECHO #####Lets Switch up things a little#####
