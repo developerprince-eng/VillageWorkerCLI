@@ -34,7 +34,7 @@ let emptypro = (name) => {
             if(stdout) console.log(`Creating Root Project: Folder\n`, stdout,`\x1b[36m \nNow in Current Working Directory: \n `, `\x1b[0m` )
         })
         
-        cp.exec(`winbatch\\node_emptypro.bat ${name}`, (err, stdout, stderr) => {
+        cp.exec(`winbatch\\node_emptypro.bat ${name}`, {cwd: `node_modules/villageworkcli-cli`}, (err, stdout, stderr) => {
             if(err) throw err
     
             if(stderr) console.log(`Error occured: \n`, stderr)
@@ -50,7 +50,7 @@ let emptypro = (name) => {
 //Scafold Angular Application
 let angular = (name)=> {
     if(isWin){
-        cp.exec(`winbatch\\node_web_angular.bat ${name}`, (err, stdout, stderr) => {
+        cp.exec(`winbatch\\node_web_angular.bat ${name}`,{cwd: `node_modules/villageworkcli-cli`}, (err, stdout, stderr) => {
             if(err) throw err
     
             if(stderr) console.log(`Error occured: \n`, stderr)
@@ -66,7 +66,7 @@ let angular = (name)=> {
 
 //Scafold React Application
 let react = (name)=> {
-    cp.exec(`winbatch\\node_web_react.bat ${name}`, (err, stdout, stderr) => {
+    cp.exec(`winbatch\\node_web_react.bat ${name}`, {cwd: `node_modules/villageworkcli-cli`}, (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(`Error occured: \n`, stderr)
@@ -95,7 +95,7 @@ let vue = (name)=> {
 }
 
 let mobile = (name) => {
-    cp.exec(`winbatch\\node_ionic.bat ${name}`, (err, stdout, stderr) => {
+    cp.exec(`winbatch\\node_ionic.bat ${name}`,{cwd: `node_modules/villageworkcli-cli`}, (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(`Error occured: \n`, stderr)
