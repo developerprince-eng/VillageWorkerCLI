@@ -1,11 +1,10 @@
 {
   "name": "villageworkcli-work",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "VillageWork Command Line Interface",
   "main": "index.js",
   "bin": {
-    "villageworkcli": "index.js",
-    "path": "node_modules\\villageworkcli-work\\"
+    "villageworkcli": "index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
