@@ -1,6 +1,7 @@
 const cp = require(`child_process`);
+const path = require(`path`)
 
-
+const winbatch = path.dirname(`winbatch`)
 //Success Console Message 
 const websuccess = (name)=> {
     console.log(`\x1b[36m%s\x1b[0m`, name, `Web Application Scafolded Successfully...\n`,`\x1b[33m`,`Enjoy!!!`,`\x1b[0m`);
@@ -34,7 +35,7 @@ let emptypro = (name) => {
             if(stdout) console.log(`Creating Root Project: Folder\n`, stdout,`\x1b[36m \nNow in Current Working Directory: \n `, `\x1b[0m` )
         })
         
-        cp.exec(`winbatch\\node_emptypro.bat ${name}`, {cwd: `node_modules/villageworkcli-cli`}, (err, stdout, stderr) => {
+        cp.exec(`node_emptypro.bat ${name}`, {cwd: winbatch}, (err, stdout, stderr) => {
             if(err) throw err
     
             if(stderr) console.log(`Error occured: \n`, stderr)
@@ -50,7 +51,7 @@ let emptypro = (name) => {
 //Scafold Angular Application
 let angular = (name)=> {
     if(isWin){
-        cp.exec(`winbatch\\node_web_angular.bat ${name}`,{cwd: `node_modules/villageworkcli-cli`}, (err, stdout, stderr) => {
+        cp.exec(`node_web_angular.bat ${name}`,{cwd: winbatch}, (err, stdout, stderr) => {
             if(err) throw err
     
             if(stderr) console.log(`Error occured: \n`, stderr)
@@ -66,7 +67,7 @@ let angular = (name)=> {
 
 //Scafold React Application
 let react = (name)=> {
-    cp.exec(`winbatch\\node_web_react.bat ${name}`, {cwd: `node_modules/villageworkcli-cli`}, (err, stdout, stderr) => {
+    cp.exec(`node_web_react.bat ${name}`, {cwd: winbatch}, (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(`Error occured: \n`, stderr)
@@ -81,7 +82,7 @@ let react = (name)=> {
 
 //Scafold Vue Application
 let vue = (name)=> {
-    cp.exec(`winbatch\\node_web_vue.bat ${name}`, (err, stdout, stderr) => {
+    cp.exec(`node_web_vue.bat ${name}`, {cwd: winbatch}, (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(`Error occured: \n`, stderr)
@@ -95,7 +96,7 @@ let vue = (name)=> {
 }
 
 let mobile = (name) => {
-    cp.exec(`winbatch\\node_ionic.bat ${name}`,{cwd: `node_modules/villageworkcli-cli`}, (err, stdout, stderr) => {
+    cp.exec(`node_ionic.bat ${name}`,{cwd: winbatch}, (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(`Error occured: \n`, stderr)
