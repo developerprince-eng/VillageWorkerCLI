@@ -35,7 +35,7 @@ let emptypro = (name) => {
             if(stdout) console.log(`Creating Root Project: Folder\n`, stdout,`\x1b[36m \nNow in Current Working Directory: \n `, `\x1b[0m` )
         })
         
-        cp.exec(`node_emptypro.bat ${name}`, {cwd: winbatch}, (err, stdout, stderr) => {
+        cp.exec(`node_emptypro.bat ${name}`,  (err, stdout, stderr) => {
             if(err) throw err
     
             if(stderr) console.log(`Error occured: \n`, stderr)
@@ -51,7 +51,7 @@ let emptypro = (name) => {
 //Scafold Angular Application
 let angular = (name)=> {
     if(isWin){
-        cp.exec(`node_web_angular.bat ${name}`,{cwd: winbatch}, (err, stdout, stderr) => {
+        cp.exec(`node_web_angular.bat ${name}`, (err, stdout, stderr) => {
             if(err) throw err
     
             if(stderr) console.log(`Error occured: \n`, stderr)
@@ -67,7 +67,7 @@ let angular = (name)=> {
 
 //Scafold React Application
 let react = (name)=> {
-    cp.exec(`node_web_react.bat ${name}`, {cwd: winbatch}, (err, stdout, stderr) => {
+    cp.exec(`node_web_react.bat ${name}`, (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(`Error occured: \n`, stderr)
@@ -82,7 +82,7 @@ let react = (name)=> {
 
 //Scafold Vue Application
 let vue = (name)=> {
-    cp.exec(`node_web_vue.bat ${name}`, {cwd: winbatch}, (err, stdout, stderr) => {
+    cp.exec(`node_web_vue.bat ${name}`,  (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(`Error occured: \n`, stderr)
@@ -96,7 +96,7 @@ let vue = (name)=> {
 }
 
 let mobile = (name) => {
-    cp.exec(`node_ionic.bat ${name}`,{cwd: winbatch}, (err, stdout, stderr) => {
+    cp.exec(`node_ionic.bat ${name}`, (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(`Error occured: \n`, stderr)
