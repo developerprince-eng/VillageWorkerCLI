@@ -24,10 +24,7 @@ program
     .option(`-g --generate`, `Trigger Generation Operation`)
     .option(`--project -p `)
     .action(name => {
-        console.log(`\x1b[36m%s\x1b[0m`, name, `Mobile Application Scafolded Successfully...\n`,
-        `\x1b[33m`,
-        `Enjoy!!!`,
-        `\x1b[0m`)
+        nd.ndjs.mobile(name)
     });
 
 program
