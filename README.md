@@ -33,16 +33,16 @@ Before You rock on using some crazy project automation, you need the following t
 ```bash
 
 ##Empty Nodejs MVC Project:
-villageworkcli webnode <project name> --generate --project 
+villageworkcli web-node <project name> empty --generate --project 
 
 ##Nodejs Angular Project
-villageworkcli webnode <project name> --generate --project --angular 
+villageworkcli web-node <project name> angular --generate --project   
 
 ##Nodejs React Project
-villageworkcli webnode <project name> --generate --project --react
+villageworkcli web-node <project name> react --generate --project 
 
 ##Nodejs Vue Project
-villageworkcli webnode <project name> --generate --project --vue
+villageworkcli web-node <project name> vue --generate --project 
 
 ##Empty Mobile Application
 villageworkcli mobile <project name> --generate --project 
