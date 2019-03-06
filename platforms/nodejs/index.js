@@ -194,62 +194,206 @@ let emptypro = (name) => {
 //Scafold Angular Application
 let angular = (name)=> {
     if(isWin){
-        cp.exec(`node_web_angular.bat ${name}`, (err, stdout, stderr) => {
+        cp.exec(`npm install -g ionic`, (err, stdout, stderr) => {
+            if(err) throw err
+
+            if(stderr) console.log(stderr)
+
+            if(stdout) console.log(stdout)
+        })
+
+        cp.exec(`ng new ${name}`, (err, stdout, stderr) => {
+            if(err) throw err
+
+            if(stderr) console.log(stderr)
+
+            if(stdout) console.log(stdout)
+        })
+
+        cp.exec(`git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
+            if(err) throw err
+
+            if(stderr) console.log(stderr)
+
+            if(stdout) console.log(stdout)
+        })
+
+        cp.exec(`hub create`, (err, stdout, stderr) => {
+            if(err) throw err
+
+            if(stderr) console.log(stderr)
+
+            if(stdout) console.log(stdout)
+        })
+
+        cp.exec(`git push origin`,  (err, stdout, stderr) => {
             if(err) throw err
     
-            if(stderr) console.log(`Error occured: \n`, stderr)
-            
+            if(stderr) console.log(stderr)
             
             if(stdout) {
-                console.log(`Scaffolding: \n\x1b[33m`, stdout)
+                console.log(`Scaffolding: \n\x1b[33m`, stdout,
+                `****************************************\n`,
+                `WE Have Successfully Pushed The Project \n`,
+                `______________^(* _ *)^________________\n`,
+                `************* ENJOY!!! *****************\n`,
+                `************* HAPPY CODING *************`
+                )
                 websuccess(name)
             }
-        }) 
+        })
     }
 }
 
 //Scafold React Application
 let react = (name)=> {
-    cp.exec(`node_web_react.bat ${name}`, (err, stdout, stderr) => {
+    cp.exec(`npx create-react-app ${name}`, (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(`Error occured: \n`, stderr)
         
+        if(stdout) console.log(stdout)   
+    }) 
+
+    cp.exec(`git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
+        if(err) throw err
+
+        if(stderr) console.log(stderr)
+
+        if(stdout) console.log(stdout)
+    })
+
+    cp.exec(`hub create`, (err, stdout, stderr) => {
+        if(err) throw err
+
+        if(stderr) console.log(stderr)
+
+        if(stdout) console.log(stdout)
+    })
+
+    cp.exec(`git push origin`,  (err, stdout, stderr) => {
+        if(err) throw err
+
+        if(stderr) console.log(stderr)
         
         if(stdout) {
-            console.log(`Scaffolding: \n\x1b[33m`, stdout)
+            console.log(`Scaffolding: \n\x1b[33m`, stdout,
+            `****************************************\n`,
+            `WE Have Successfully Pushed The Project \n`,
+            `______________^(* _ *)^________________\n`,
+            `************* ENJOY!!! *****************\n`,
+            `************* HAPPY CODING *************`
+            )
             websuccess(name)
         }
-    }) 
+    })
 };
 
 //Scafold Vue Application
 let vue = (name)=> {
-    cp.exec(`node_web_vue.bat ${name}`,  (err, stdout, stderr) => {
+    cp.exec(`npm install -g create-vue-app`,  (err, stdout, stderr) => {
         if(err) throw err
 
-        if(stderr) console.log(`Error occured: \n`, stderr)
+        if(stderr) console.log(stderr)
         
+        if(stdout) console.log(stdout)
+    }) 
+
+    cp.exec(`create-vue-app ${name}`,  (err, stdout, stderr) => {
+        if(err) throw err
+
+        if(stderr) console.log(stderr)
+        
+        if(stdout) console.log(stdout)
+    }) 
+
+    cp.exec(`git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
+        if(err) throw err
+
+        if(stderr) console.log(stderr)
+
+        if(stdout) console.log(stdout)
+    })
+
+    cp.exec(`hub create`, (err, stdout, stderr) => {
+        if(err) throw err
+
+        if(stderr) console.log(stderr)
+
+        if(stdout) console.log(stdout)
+    })
+
+    cp.exec(`git push origin`,  (err, stdout, stderr) => {
+        if(err) throw err
+
+        if(stderr) console.log(stderr)
         
         if(stdout) {
-            console.log(`Scaffolding: \n\x1b[33m`, stdout)
+            console.log(`Scaffolding: \n\x1b[33m`, stdout,
+            `****************************************\n`,
+            `WE Have Successfully Pushed The Project \n`,
+            `______________^(* _ *)^________________\n`,
+            `************* ENJOY!!! *****************\n`,
+            `************* HAPPY CODING *************`
+            )
             websuccess(name)
         }
-    }) 
+    })
 }
 
 let mobile = (name) => {
-    cp.exec(`node_ionic.bat ${name}`, (err, stdout, stderr) => {
+    cp.exec(`npm install -g ionic`, (err, stdout, stderr) => {
         if(err) throw err
 
-        if(stderr) console.log(`Error occured: \n`, stderr)
+        if(stderr) console.log(stderr)
         
+        
+        if(stdout) console.log(stdout)
+    }) 
+
+    cp.exec(`ionic $name Blank`, (err, stdout, stderr) => {
+        if(err) throw err
+
+        if(stderr) console.log(stderr)
+        
+        
+        if(stdout) console.log(stdout)
+    })
+
+    cp.exec(`git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
+        if(err) throw err
+
+        if(stderr) console.log(stderr)
+
+        if(stdout) console.log(stdout)
+    })
+
+    cp.exec(`hub create`, (err, stdout, stderr) => {
+        if(err) throw err
+
+        if(stderr) console.log(stderr)
+
+        if(stdout) console.log(stdout)
+    })
+
+    cp.exec(`git push origin`,  (err, stdout, stderr) => {
+        if(err) throw err
+
+        if(stderr) console.log(stderr)
         
         if(stdout) {
-            console.log(`Scaffolding: \n\x1b[33m`, stdout)
+            console.log(`Scaffolding: \n\x1b[33m`, stdout,
+            `****************************************\n`,
+            `WE Have Successfully Pushed The Project \n`,
+            `______________^(* _ *)^________________\n`,
+            `************* ENJOY!!! *****************\n`,
+            `************* HAPPY CODING *************`
+            )
             websuccess(name)
         }
-    }) 
+    })
+
+
 }
 exports.ndjs =  { angular, react , vue, emptypro, mobile, pwshell}
 
