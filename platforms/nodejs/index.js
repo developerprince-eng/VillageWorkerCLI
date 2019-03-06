@@ -329,7 +329,7 @@ let mobile = (name) => {
         if(stdout) console.log(stdout)
     })
 
-    cp.exec(`git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
+    cp.exec(`git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(stderr)
