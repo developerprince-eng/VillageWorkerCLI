@@ -255,7 +255,6 @@ let angular = (name)=> {
     }
 
     initproject()
-        
 }
 
 //Scafold React Application
@@ -364,7 +363,6 @@ let vue = (name)=> {
         })
     }
    
-
     async function initproject() {
         await phase1()
 
@@ -376,7 +374,6 @@ let vue = (name)=> {
     }
 
     initproject()
-
 
 }
 
