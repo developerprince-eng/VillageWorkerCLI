@@ -30,28 +30,27 @@ program
 program
     .command(`web-node <name>`)
     .option(`-g, --generate`, `Trigger Generation Operation`)
-    .option(`-p, --project`)
-    .option(`--angular`)
-    .action( (name) => {
-        nd.ndjs.angular(name)
+    .option(`-p, --project [type]`)
+    .action( (name, type) => {
+        if(type == `angular`)  nd.ndjs.angular(name)
     })
 
-program
-    .command(`web-node <name>`)
-    .option(`-g, --generate`, `Trigger Generation Operation`)
-    .option(`-p, --project`)
-    .option(`--react`)
-    .action((name) => {
-        nd.ndjs.react(name)
-    })
+// program
+//     .command(`web-node <name>`)
+//     .option(`-g, --generate`, `Trigger Generation Operation`)
+//     .option(`-p, --project`)
+//     .option(`--react`)
+//     .action((name) => {
+//         nd.ndjs.react(name)
+//     })
 
-program
-    .command(`web-node <name>`)
-    .option(`-g, --generate`, `Trigger Generation Operation`)
-    .option(`-p, --project`)
-    .option(`--vue`)
-    .action((name) => {
-        nd.ndjs.vue(name)
-    })
+// program
+//     .command(`web-node <name>`)
+//     .option(`-g, --generate`, `Trigger Generation Operation`)
+//     .option(`-p, --project`)
+//     .option(`--vue`)
+//     .action((name) => {
+//         nd.ndjs.vue(name)
+//     })
 
 program.parse(process.argv)
