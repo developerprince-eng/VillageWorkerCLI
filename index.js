@@ -36,4 +36,10 @@ program
         nd.ndjs.angular(name)
     });
 
+program
+    .command(`web-node <name>`)
+    .option(`-g --generate`, `Trigger Generation Operation`)
+    .option(`-p --project`)
+    .option(`--react`)
+    .action((name))
 program.parse(process.argv);
