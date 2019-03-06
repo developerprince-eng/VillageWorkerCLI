@@ -164,7 +164,7 @@ let emptypro = (name) => {
             if(stdout) console.log(stdout)
         })
 
-        cp.exec(`hub create`, (err, stdout, stderr) => {
+        cp.exec(`hub create --private`, (err, stdout, stderr) => {
             if(err) throw err
 
             if(stderr) console.log(stderr)
@@ -211,7 +211,7 @@ let angular = (name)=> {
             if(stdout) console.log(stdout)
         })
 
-        cp.exec(`hub create`, (err, stdout, stderr) => {
+        cp.exec(`hub create --private`, (err, stdout, stderr) => {
             if(err) throw err
 
             if(stderr) console.log(stderr)
@@ -248,7 +248,7 @@ let react = (name)=> {
         if(stdout) console.log(stdout)
     })
 
-    cp.exec(`hub create`, (err, stdout, stderr) => {
+    cp.exec(`hub create --private`, (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(stderr)
@@ -292,7 +292,7 @@ let vue = (name)=> {
         if(stdout) console.log(stdout)
     })
 
-    cp.exec(`hub create`, (err, stdout, stderr) => {
+    cp.exec(`hub create --private`, (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(stderr)
@@ -337,7 +337,7 @@ let mobile = (name) => {
         if(stdout) console.log(stdout)
     })
 
-    cp.exec(`hub create`, (err, stdout, stderr) => {
+    cp.exec(`hub create --private`, (err, stdout, stderr) => {
         if(err) throw err
 
         if(stderr) console.log(stderr)
