@@ -79,14 +79,6 @@ let emptypro = (name) => {
             if(stdout) console.log(stdout)
         })
 
-        // cp.exec(`type nul>${name}/controllers/password.controller.js`, (err, stderr, stdout) => {
-        //     if(err) throw err
-
-        //     if(stderr) console.log(stderr)
-
-        //     if(stdout) console.log(stdout)
-        // })
-
         cp.exec(`type nul>${name}/controllers/logs.controller.js`, (err, stderr, stdout) => {
             if(err) throw err
 
