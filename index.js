@@ -12,7 +12,7 @@ program
 
 //This is for Scafolding a project
 program
-    .command(`web <name>`) 
+    .command(`web-node <name>`) 
     .option(`-g --generate`, `Trigger Generation Operation`)
     .option(`--project -p`)
     .action((name) => {
