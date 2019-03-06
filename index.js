@@ -14,9 +14,9 @@ program
     .option(`-p, --project`)
     .action((name, type) => {
         if(type == `empty`) nd.ndjs.emptypro(name)
-        if(type == `angular`) nd.ndjs.angular(name)
-        if(type == `react`) nd.ndjs.react(name)
-        if(type == `vue`) nd.ndjs.vue(name)
+        else if(type == `angular`) nd.ndjs.angular(name)
+        else if(type == `react`) nd.ndjs.react(name)
+        else if(type == `vue`) nd.ndjs.vue(name)
     })
 
 program
