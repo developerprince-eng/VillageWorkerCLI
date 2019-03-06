@@ -20,6 +20,7 @@ program
     })
 
 program
+    .usage(`[commands] <filename> <options1> <options2>`)
     .command(`mobile <name>`)
     .option(`-g, --generate`, `Trigger Generation Operation`)
     .option(`-p, --project`)
@@ -28,9 +29,10 @@ program
     })
 
 program
+    .usage(`[commands] <filename> <options1> <options2>`)
     .command(`web-node <name>`)
     .option(`-g, --generate`, `Trigger Generation Operation`)
-    .option(`-p, --project [type]`)
+    .option(`-p, --project <type>`)
     .action( (name, type) => {
         if(type == `angular`)  nd.ndjs.angular(name)
     })
