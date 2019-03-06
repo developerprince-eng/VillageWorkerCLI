@@ -20,159 +20,177 @@ let pwshell = () => {
 
 //Empty project Scafold
 let emptypro = (name) => {
-    cp.exec(`mkdir ${name} && cd ${name}`, (err, stdout, stderr) => {
-        if(err) throw err
 
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(`Creating Root Project: Folder\n`, stdout,`\x1b[36m \nNow in Current Working Directory: \n `, `\x1b[0m`,
-        `****************************************\n`,
-        `******* CREATING A NEW PROJECT *********\n`,
-        `****************************************\n`
-        )
-    })
+    const phase1 = () => {
+        cp.exec(`mkdir ${name} && cd ${name}`, (err, stdout, stderr) => {
+            if(err) throw err
     
-    cp.exec(`mkdir ${name}\\models && mkdir ${name}\\controllers && mkdir ${name}\\views`, (err, stdout, stderr) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(`Creating Project Sub-Root Folders: \n`, stdout)
-    })
-
-    cp.exec(`type nul>${name}/models/user.models.js`, (err, stderr, stdout) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`type nul>${name}/models/password.models.js`, (err, stderr, stdout) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`type nul>${name}/models/log.models.js`, (err, stderr, stdout) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`type nul>${name}/controllers/user.controller.js`, (err, stderr, stdout) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`type nul>${name}/controllers/passwords.controller.js`, (err, stderr, stdout) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`type nul>${name}/controllers/logs.controller.js`, (err, stderr, stdout) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`type nul>${name}/views/signin.view.ejs`, (err, stderr, stdout) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`type nul>${name}/views/signup.view.ejs`, (err, stderr, stdout) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`type nul>${name}/views/home.view.ejs`, (err, stderr, stdout) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`type nul>${name}/views/logs.view.ejs`, (err, stderr, stdout) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`type nul>${name}/views/dashboard.view.ejs`, (err, stderr, stdout) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`type nul>${name}/views/signin.view.ejs`, (err, stderr, stdout) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`type nul>${name}/app.js`, (err, stdout, stderr) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout,
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(`Creating Root Project: Folder\n`, stdout,`\x1b[36m \nNow in Current Working Directory: \n `, `\x1b[0m`,
             `****************************************\n`,
-            `#####Lets Switch up things a little#####\n`,
-            `****************************************\n`,
-            `Now Lets Do Magic using Hub to Access Github\n`,
-            `****************************************\n`)
-    })
-
-    cp.exec(`git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`hub create --private`, (err, stdout, stderr) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-
-        if(stdout) {
-            console.log(`Scaffolding: \n\x1b[33m`, stdout,
-            `****************************************\n`,
-            `WE Have Successfully Pushed The Project \n`,
-            `______________^(* _ *)^________________\n`,
-            `************* ENJOY!!! *****************\n`,
-            `************* HAPPY CODING *************`
+            `******* CREATING A NEW PROJECT *********\n`,
+            `****************************************\n`
             )
-            websuccess(name)
-        }
-    })
+        })
+        
+        cp.exec(`mkdir ${name}\\models && mkdir ${name}\\controllers && mkdir ${name}\\views`, (err, stdout, stderr) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(`Creating Project Sub-Root Folders: \n`, stdout)
+        })
+    
+        cp.exec(`type nul>${name}/models/user.models.js`, (err, stderr, stdout) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    
+        cp.exec(`type nul>${name}/models/password.models.js`, (err, stderr, stdout) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    
+        cp.exec(`type nul>${name}/models/log.models.js`, (err, stderr, stdout) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    
+        cp.exec(`type nul>${name}/controllers/user.controller.js`, (err, stderr, stdout) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    
+        cp.exec(`type nul>${name}/controllers/passwords.controller.js`, (err, stderr, stdout) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    
+        cp.exec(`type nul>${name}/controllers/logs.controller.js`, (err, stderr, stdout) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    
+        cp.exec(`type nul>${name}/views/signin.view.ejs`, (err, stderr, stdout) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    
+        cp.exec(`type nul>${name}/views/signup.view.ejs`, (err, stderr, stdout) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    
+        cp.exec(`type nul>${name}/views/home.view.ejs`, (err, stderr, stdout) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    
+        cp.exec(`type nul>${name}/views/logs.view.ejs`, (err, stderr, stdout) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    
+        cp.exec(`type nul>${name}/views/dashboard.view.ejs`, (err, stderr, stdout) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    
+        cp.exec(`type nul>${name}/views/signin.view.ejs`, (err, stderr, stdout) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    
+        cp.exec(`type nul>${name}/app.js`, (err, stdout, stderr) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout,
+                `****************************************\n`,
+                `#####Lets Switch up things a little#####\n`,
+                `****************************************\n`,
+                `Now Lets Do Magic using Hub to Access Github\n`,
+                `****************************************\n`)
+        })
+    }
+
+    const phase2 = () => {
+        cp.exec(`git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) console.log(stdout)
+        })
+    }
+
+    const phase3 = () => {
+        cp.exec(`hub create --private`, (err, stdout, stderr) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) {
+                console.log(`Scaffolding: \n\x1b[33m`, stdout,
+                `****************************************\n`,
+                `WE Have Successfully Pushed The Project \n`,
+                `______________^(* _ *)^________________\n`,
+                `************* ENJOY!!! *****************\n`,
+                `************* HAPPY CODING *************`
+                )
+                websuccess(name)
+            }
+        })
+    }
+
+    async function preproject() {
+        await phase1  () 
+
+        await phase2()
+
+        phase3()
+    }
+
+    preproject()
+
 }
 
 //Scafold Angular Application
