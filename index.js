@@ -7,16 +7,20 @@ const nd = require(`./platforms/nodejs/index`)
 
 
 program
-    .version(`1.0.0`, `-v, --version`)
+    .version(`1.0.16`, `-v, --version`)
 
 
 //This is for Scafolding a project
 program
-    .command(`web-node <name>`) 
+    .usage(`[commands] <filename> <type> <options1> <options2>`)
+    .command(`web-node <name> <type>`) 
     .option(`-g, --generate`, `Trigger Generation Operation`)
     .option(`-p, --project`)
-    .action((name) => {
-        nd.ndjs.emptypro(name);
+    .action((name, type) => {
+        if(type == `empty`) nd.ndjs.emptypro(name)
+        if(type == `angular`) nd.ndjs.angular(name)
+        if(type == `react`) nd.ndjs.react(name)
+        if(type == `vue`) nd.ndjs.vue(name)
     })
 
 program
@@ -28,19 +32,18 @@ program
         nd.ndjs.mobile(name)
     })
 
-program
-    .usage(`[commands] <filename> <options1> <options2>`)
-    .command(`web-node <name>`)
-    .option(`-g, --generate`, `Trigger Generation Operation`)
-    .option(`-p, --project <type>`)
-    .action( (name, type) => {
-        if(type == `angular`)  nd.ndjs.angular(name)
-    })
+// program
+//     .usage(`[commands] <filename> <options1> <options2>`)
+//     .command(`web-node <name>`)
+//     .option(`-g, --generate`, `Trigger Generation Operation`)
+//     .option(`--angular`)
+//     .action( (name) => {
+//         nd.ndjs.angular(name)
+//     })
 
 // program
 //     .command(`web-node <name>`)
 //     .option(`-g, --generate`, `Trigger Generation Operation`)
-//     .option(`-p, --project`)
 //     .option(`--react`)
 //     .action((name) => {
 //         nd.ndjs.react(name)
@@ -49,7 +52,6 @@ program
 // program
 //     .command(`web-node <name>`)
 //     .option(`-g, --generate`, `Trigger Generation Operation`)
-//     .option(`-p, --project`)
 //     .option(`--vue`)
 //     .action((name) => {
 //         nd.ndjs.vue(name)
