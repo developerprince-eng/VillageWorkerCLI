@@ -169,14 +169,6 @@ let emptypro = (name) => {
 
             if(stderr) console.log(stderr)
 
-            if(stdout) console.log(stdout)
-        })
-
-        cp.exec(`git push origin`,  (err, stdout, stderr) => {
-            if(err) throw err
-    
-            if(stderr) console.log(stderr)
-            
             if(stdout) {
                 console.log(`Scaffolding: \n\x1b[33m`, stdout,
                 `****************************************\n`,
@@ -187,7 +179,8 @@ let emptypro = (name) => {
                 )
                 websuccess(name)
             }
-        })  
+        })
+
     }
 }
 
@@ -223,14 +216,6 @@ let angular = (name)=> {
 
             if(stderr) console.log(stderr)
 
-            if(stdout) console.log(stdout)
-        })
-
-        cp.exec(`git push origin`,  (err, stdout, stderr) => {
-            if(err) throw err
-    
-            if(stderr) console.log(stderr)
-            
             if(stdout) {
                 console.log(`Scaffolding: \n\x1b[33m`, stdout,
                 `****************************************\n`,
@@ -241,7 +226,7 @@ let angular = (name)=> {
                 )
                 websuccess(name)
             }
-        })
+        })        
     }
 }
 
@@ -268,14 +253,6 @@ let react = (name)=> {
 
         if(stderr) console.log(stderr)
 
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`git push origin`,  (err, stdout, stderr) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-        
         if(stdout) {
             console.log(`Scaffolding: \n\x1b[33m`, stdout,
             `****************************************\n`,
@@ -320,14 +297,6 @@ let vue = (name)=> {
 
         if(stderr) console.log(stderr)
 
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`git push origin`,  (err, stdout, stderr) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-        
         if(stdout) {
             console.log(`Scaffolding: \n\x1b[33m`, stdout,
             `****************************************\n`,
@@ -373,14 +342,6 @@ let mobile = (name) => {
 
         if(stderr) console.log(stderr)
 
-        if(stdout) console.log(stdout)
-    })
-
-    cp.exec(`git push origin`,  (err, stdout, stderr) => {
-        if(err) throw err
-
-        if(stderr) console.log(stderr)
-        
         if(stdout) {
             console.log(`Scaffolding: \n\x1b[33m`, stdout,
             `****************************************\n`,
@@ -392,8 +353,6 @@ let mobile = (name) => {
             websuccess(name)
         }
     })
-
-
 }
 exports.ndjs =  { angular, react , vue, emptypro, mobile, pwshell}
 

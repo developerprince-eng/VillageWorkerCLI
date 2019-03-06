@@ -28,23 +28,12 @@ program
     });
 
 program
-    .command(`web <name>`)
+    .command(`web-node <name>`)
     .option(`-g --generate`, `Trigger Generation Operation`)
-    .option(`-P --project`)
-    .option(`-p --platform <platform>`, `State the Platform of development`)
-    .option(`--view -v <view>`, `Seletct View Templating Engine`)
-    .action( (name, view, platform) => {
-        if(platform == `nodejs`) {
-            if(view == `angular`){
-                nd.ndjs.angular(name)
-            }
-            if( view == `vue`) {
-                nd.ndjs.vue(name)
-            }
-            if( view == `react`) {
-                nd.ndjs.react(name)
-            }
-        }
+    .option(`-p --project`)
+    .option(`--angular`)
+    .action( (name) => {
+        nd.ndjs.angular(name)
     });
 
 program.parse(process.argv);

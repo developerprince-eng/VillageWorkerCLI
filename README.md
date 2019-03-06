@@ -8,7 +8,7 @@ To Initiate Project Scafolding the CLI currently supports project scaffolding fo
 
 The Current Version which is version 1.0.0 is still in is Alpha form therefore you shall see rapid evolution of CLI as we progress with project with the Dev Team (Kubaki) 
 
-Currently the only operating system which allows for Scaffolding is Win32 OS , Currently we working on a Unix support which utillizes the darwin environment. 
+Currently the only operating system which allows for Scaffolding is Win32 OS & Darwin.
 
 ###Requirements
 
