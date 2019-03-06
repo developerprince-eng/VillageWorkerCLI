@@ -20,7 +20,6 @@ let pwshell = () => {
 
 //Empty project Scafold
 let emptypro = (name) => {
-
     const phase1 = () => {
         cp.exec(`mkdir ${name} && cd ${name}`, (err, stdout, stderr) => {
             if(err) throw err
@@ -259,7 +258,6 @@ let angular = (name)=> {
 
 //Scafold React Application
 let react = (name)=> {
-
     const phase1 = () => {
         cp.exec(`npx create-react-app ${name}`, (err, stdout, stderr) => {
             if(err) throw err
@@ -313,7 +311,6 @@ let react = (name)=> {
 
 //Scafold Vue Application
 let vue = (name)=> {
-
     const phase1 = () => {
         cp.exec(`npm install -g create-vue-app`,  (err, stdout, stderr) => {
             if(err) throw err
@@ -378,7 +375,6 @@ let vue = (name)=> {
 }
 
 let mobile = (name) => {
-
     const phase1 = () => {
         cp.exec(`npm install -g ionic`, (err, stdout, stderr) => {
             if(err) throw err
