@@ -79,7 +79,7 @@ let emptypro = (name) => {
             if(stdout) console.log(stdout)
         })
 
-        cp.exec(`type nul>${name}/controllers/logs.controller.js`, (err, stderr, stdout) => {
+        cp.exec(`type nul>${name}/controllers/passwords.controller.js`, (err, stderr, stdout) => {
             if(err) throw err
 
             if(stderr) console.log(stderr)
@@ -156,18 +156,10 @@ let emptypro = (name) => {
                 `****************************************\n`)
         })
 
-        cp.exec(`git init && git add .`, (err, stdout, stderr) => {
+        cp.exec(`git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
             if(err) throw err
 
             if(stderr) console.log(stderr)
-
-            if(stdout) console.log(stdout)
-        })
-
-        cp.exec(`git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
-            if(err) throw err
-
-            if(stderr) console.log(err)
 
             if(stdout) console.log(stdout)
         })
