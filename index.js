@@ -4,7 +4,7 @@ const program = require(`commander`)
 const nd = require(`./platforms/nodejs/index`)
 
 program
-    .version(`1.0.23`, `-v, --version`)
+    .version(`1.0.24`, `-v, --version`)
 
 //This is for Scafolding a project
 program
