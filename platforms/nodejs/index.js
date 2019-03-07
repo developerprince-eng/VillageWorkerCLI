@@ -6,18 +6,6 @@ const websuccess = (name)=> {
     console.log(`\x1b[36m%s\x1b[0m`, name, `Web Application Scafolded Successfully...\n`,`\x1b[33m`,`Enjoy!!!`,`\x1b[0m`);
 } 
 
-let pwshell = () => {
-    if(isWin) {
-        cp.exec(`powershell`, (err, stdout, stderr) => {
-            if(err) throw err   
-
-            if(stderr) console.log(`Kublind Baba! : \n`, stderr)
-
-            if(stdout) console.log(`Yah Yah: \n`, stdout)
-        })
-    }
-}
-
 //Empty project Scafold
 let emptypro = (name) => {
     const phase1 = () => {
@@ -205,7 +193,7 @@ let emptypro = (name) => {
 //Scafold Angular Application
 let angular = (name)=> {  
     const phase1 = () => {
-        cp.exec(`npm install -g ionic && ng new ${name} && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" && hub create --private`, (err, stdout, stderr) => {
+        cp.exec(`npm install -g ionic && ng new ${name} && cd ${name} && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" && hub create --private`, (err, stdout, stderr) => {
             if(err) throw err
     
             if(stderr) console.log(stderr)
