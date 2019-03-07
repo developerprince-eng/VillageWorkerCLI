@@ -72,13 +72,13 @@ Villagework-CLI will have automated deployment for the following cloud platforms
 #### Heroku
 #### Google Cloud Platform
 
-###2.)Automated Trello Intergration
+### 2.)Automated Trello Intergration
 Villagework-CLI will have automated intergration to trello during project initiation and deployement 
 
-###3.)Automated Project Documentation
+### 3.)Automated Project Documentation
 Villagework-CLI will also assist and Guide developers to document their projetcts effectively
 
-###Automated Maintenance
+### 4.)Automated Maintenance
 Villagework-CLI will have automated maintenance which invoke continous deployement and continous intergration.
 
 
