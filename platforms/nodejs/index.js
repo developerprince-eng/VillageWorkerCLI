@@ -501,5 +501,5 @@ let mobile = (name) => {
     // initproject()
     phase1()
 }
-exports.ndjs =  { angular, react , vue, emptypro, mobile, pwshell}
+exports.ndjs =  { angular, react , vue, emptypro, mobile}
 
