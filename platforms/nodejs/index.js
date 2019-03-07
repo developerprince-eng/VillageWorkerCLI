@@ -180,16 +180,19 @@ let emptypro = (name) => {
         })
     }
 
-    async function initproject() {
+    async function initproject_phase1() {
         await phase1  () 
 
-        await phase2()
+        phase2()
+    }
+
+    async function initproject() {
+        await initproject_phase1()
 
         phase3()
     }
 
     initproject()
-
 }
 
 //Scafold Angular Application
@@ -243,16 +246,23 @@ let angular = (name)=> {
         })
     }
     
-    async function initproject() {
+    async function initproject_phase1() {
         await phase1()
 
-        await phase2()
+        phase2()
+    }
+    
+    async function initproject_phase2() {
+        await initproject_phase1()
 
-        await phase3()
+        phase3()
+    }
+
+    async function initproject(){
+        await initproject_phase2()
 
         phase4()
     }
-
     initproject()
 }
 
@@ -298,10 +308,14 @@ let react = (name)=> {
         })
     }
 
-    async function initproject() {
-        await phase1()
+    async function initproject_phase1() {
+        await phase1  () 
 
-        await phase2()
+        phase2()
+    }
+
+    async function initproject() {
+        await initproject_phase1()
 
         phase3()
     }
@@ -360,16 +374,23 @@ let vue = (name)=> {
         })
     }
    
-    async function initproject() {
+    async function initproject_phase1() {
         await phase1()
 
-        await phase2()
+        phase2()
+    }
+    
+    async function initproject_phase2() {
+        await initproject_phase1()
 
-        await phase3()
+        phase3()
+    }
+
+    async function initproject(){
+        await initproject_phase2()
 
         phase4()
     }
-
     initproject()
 
 }
@@ -426,16 +447,23 @@ let mobile = (name) => {
         })
     }
 
-    async function initproject() {
+    async function initproject_phase1() {
         await phase1()
 
-        await phase2()
+        phase2()
+    }
+    
+    async function initproject_phase2() {
+        await initproject_phase1()
 
-        await phase3()
+        phase3()
+    }
+
+    async function initproject(){
+        await initproject_phase2()
 
         phase4()
     }
-
     initproject()
 }
 exports.ndjs =  { angular, react , vue, emptypro, mobile, pwshell}
