@@ -9,123 +9,112 @@ const websuccess = (name)=> {
 //Empty project Scafold
 let emptypro = (name) => {
     const phase1 = () => {
-        cp.exec(`mkdir ${name} && cd ${name}`, (err, stdout, stderr) => {
+        cp.execSync(`mkdir ${name} && cd ${name}`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
             if(stdout) console.log(`Creating Root Project: Folder\n`, stdout,`\x1b[36m \nNow in Current Working Directory: \n `, `\x1b[0m`,
             `****************************************\n`,
             `******* CREATING A NEW PROJECT *********\n`,
             `****************************************\n`
             )
+            console.log(stderr)
         })
         
-        cp.exec(`mkdir ${name}\\models && mkdir ${name}\\controllers && mkdir ${name}\\views`, (err, stdout, stderr) => {
+        cp.execSync(`mkdir ${name}\\models && mkdir ${name}\\controllers && mkdir ${name}\\views`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(`Creating Project Sub-Root Folders: \n`, stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
     
-        cp.exec(`type nul>${name}/models/user.models.js`, (err, stderr, stdout) => {
+        cp.execSync(`type nul>${name}/models/user.models.js`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
     
-        cp.exec(`type nul>${name}/models/password.models.js`, (err, stderr, stdout) => {
+        cp.execSync(`type nul>${name}/models/password.models.js`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
     
-        cp.exec(`type nul>${name}/models/log.models.js`, (err, stderr, stdout) => {
+        cp.execSync(`type nul>${name}/models/log.models.js`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
     
-        cp.exec(`type nul>${name}/controllers/user.controller.js`, (err, stderr, stdout) => {
+        cp.execSync(`type nul>${name}/controllers/user.controller.js`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
     
-        cp.exec(`type nul>${name}/controllers/passwords.controller.js`, (err, stderr, stdout) => {
+        cp.execSync(`type nul>${name}/controllers/passwords.controller.js`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
     
-        cp.exec(`type nul>${name}/controllers/logs.controller.js`, (err, stderr, stdout) => {
+        cp.execSync(`type nul>${name}/controllers/logs.controller.js`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
     
-        cp.exec(`type nul>${name}/views/signin.view.ejs`, (err, stderr, stdout) => {
+        cp.execSync(`type nul>${name}/views/signin.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
     
-        cp.exec(`type nul>${name}/views/signup.view.ejs`, (err, stderr, stdout) => {
+        cp.execSync(`type nul>${name}/views/signup.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
     
-        cp.exec(`type nul>${name}/views/home.view.ejs`, (err, stderr, stdout) => {
+        cp.execSync(`type nul>${name}/views/home.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
     
-        cp.exec(`type nul>${name}/views/logs.view.ejs`, (err, stderr, stdout) => {
+        cp.execSync(`type nul>${name}/views/logs.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
     
-        cp.exec(`type nul>${name}/views/dashboard.view.ejs`, (err, stderr, stdout) => {
+        cp.execSync(`type nul>${name}/views/dashboard.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
     
-        cp.exec(`type nul>${name}/views/signin.view.ejs`, (err, stderr, stdout) => {
+        cp.execSync(`type nul>${name}/views/signin.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
-            if(stdout) console.log(stdout)
+            console.log(stdout)
+            console.log(stderr)
         })
-    
-        cp.exec(`type nul>${name}/app.js && git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" && hub create --private`, (err, stdout, stderr) => {
+        
+        cp.execSync(`type nul>${name}/app.js`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.execSync(`git init && git add .`, (err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.execSync(`git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+        cp.execSync(`hub create --private`, (err, stdout, stderr) => {
             if(err) throw err
     
             if(stderr) console.log(stderr)
@@ -142,64 +131,50 @@ let emptypro = (name) => {
                 `______________^(* _ *)^________________\n`,
                 `************* ENJOY!!! *****************\n`,
                 `************* HAPPY CODING *************`)
+                websuccess()
         })
     }
-
-    // const phase2 = () => {
-    //     cp.exec(`git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-    
-    //         if(stdout) console.log(stdout)
-    //     })
-    // }
-
-    // const phase3 = () => {
-    //     cp.exec(`hub create --private`, (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-    
-        //     if(stdout) {
-        //         console.log(`Scaffolding: \n\x1b[33m`, stdout,
-        //         `****************************************\n`,
-        //         `WE Have Successfully Pushed The Project \n`,
-        //         `______________^(* _ *)^________________\n`,
-        //         `************* ENJOY!!! *****************\n`,
-        //         `************* HAPPY CODING *************`
-        //         )
-        //         websuccess(name)
-        //     }
-        // })
-    // }
-
-    // async function initproject_phase1() {
-    //     await phase1  () 
-
-    //     phase2()
-    // }
-
-    // async function initproject() {
-    //     await initproject_phase1()
-
-    //     phase3()
-    // }
-
-    // initproject()
+   
     phase1()
 }
 
 //Scafold Angular Application
 let angular = (name)=> {  
     const phase1 = () => {
-        cp.exec(`npm install -g ionic && ng new ${name} && cd ${name} && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" && hub create --private`, (err, stdout, stderr) => {
+        cp.execSync(`npm install -g ionic`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-    
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.execSync(`ng new ${name}`, (err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.execSync(`cd ${name}`,(err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stderr)
+            console.log(stdout)
+        })
+
+        cp.execSync(`git add .`, (err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.execSync(`git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.execSync(`hub create --private`, (err, stdout, stderr)=>{
+            if(err) throw err
             if(stdout) {
-                console.log(`Scaffolding: \n\x1b[33m`, stdout,
+                console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
                 `****************************************\n`,
                 `WE Have Successfully Pushed The Project \n`,
                 `______________^(* _ *)^________________\n`,
@@ -208,79 +183,39 @@ let angular = (name)=> {
                 )
                 websuccess(name)
             }
+            console.log(stderr)
         })
+        
     } 
 
-    // const phase2 = () => {
-    //     cp.exec(`ng new ${name}`, (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-    
-    //         if(stdout) console.log(stdout)
-    //     })
-    // }
-
-    // const phase3 = () => {
-    //     cp.exec(`git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-    
-    //         if(stdout) console.log(stdout)
-    //     })
-    // }
-
-    // const phase4 = () => {
-    //     cp.exec(`hub create --private`, (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-    
-    //         if(stdout) {
-    //             console.log(`Scaffolding: \n\x1b[33m`, stdout,
-    //             `****************************************\n`,
-    //             `WE Have Successfully Pushed The Project \n`,
-    //             `______________^(* _ *)^________________\n`,
-    //             `************* ENJOY!!! *****************\n`,
-    //             `************* HAPPY CODING *************`
-    //             )
-    //             websuccess(name)
-    //         }
-    //     })
-    // }
-    
-    // async function initproject_phase1() {
-    //     await phase1()
-
-    //     phase2()
-    // }
-    
-    // async function initproject_phase2() {
-    //     await initproject_phase1()
-
-    //     phase3()
-    // }
-
-    // async function initproject(){
-    //     await initproject_phase2()
-
-    //     phase4()
-    // }
-    // initproject()
     phase1()
 }
 
 //Scafold React Application
 let react = (name)=> {
     const phase1 = () => {
-        cp.exec(`npx create-react-app ${name} && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" && hub create --private`, (err, stdout, stderr) => {
+        cp.execSync(`npx create-react-app ${name}`, (err, stdout, stderr) => {
+            if(err) throw err   
+            console.log(stdout)
+            console.log(stderr)           
+        })
+
+        cp.execSync(`git add .`, (err, stdout, stderr)=>{
             if(err) throw err
-    
-            if(stderr) console.log(`Error occured: \n`, stderr)
-            
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.execSync(`git commit -m "Initial Commit, Using VillageWorkCLI"`,(err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.execSync(`hub create --private`,(err, stdout, stderr)=>{
+            if(err) throw err
             if(stdout) {
-                console.log(`Scaffolding: \n\x1b[33m`, stdout,
+                console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
                 `****************************************\n`,
                 `WE Have Successfully Pushed The Project \n`,
                 `______________^(* _ *)^________________\n`,
@@ -289,65 +224,39 @@ let react = (name)=> {
                 )
                 websuccess(name)
             }   
-        }) 
+            console.log(stderr)
+        })
+
     }
 
-    // const phase2 = () => {
-    //     cp.exec(`git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-    
-    //         if(stdout) console.log(stdout)
-    //     })
-    
-    // }
-
-    // const phase3 = () => {
-    //     cp.exec(`hub create --private`, (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-    
-    //         if(stdout) {
-    //             console.log(`Scaffolding: \n\x1b[33m`, stdout,
-    //             `****************************************\n`,
-    //             `WE Have Successfully Pushed The Project \n`,
-    //             `______________^(* _ *)^________________\n`,
-    //             `************* ENJOY!!! *****************\n`,
-    //             `************* HAPPY CODING *************`
-    //             )
-    //             websuccess(name)
-    //         }
-    //     })
-    // }
-
-    // async function initproject_phase1() {
-    //     await phase1  () 
-
-    //     phase2()
-    // }
-
-    // async function initproject() {
-    //     await initproject_phase1()
-
-    //     phase3()
-    // }
-
-    // initproject()
     phase1()
 };
 
 //Scafold Vue Application
 let vue = (name)=> {
     const phase1 = () => {
-        cp.exec(`npm install -g create-vue-app && create-vue-app ${name} && git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" && hub create --private`,  (err, stdout, stderr) => {
+        cp.execSync(`npm install -g create-vue-app  && hub create --private`,  (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-            
+            console.log(stderr)
+            console.log(stdout)
+        }) 
+
+        cp.execSync(`create-vue-app ${name}`,(err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.execSync(`git init && git add .`,(err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.execSync(`git commit -m "Initial Commit, Using VillageWorkCLI"`,(err, stdout, stderr)=>{
+            if(err) throw err
             if(stdout) {
-                console.log(`Scaffolding: \n\x1b[33m`, stdout,
+                console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
                 `****************************************\n`,
                 `WE Have Successfully Pushed The Project \n`,
                 `______________^(* _ *)^________________\n`,
@@ -356,80 +265,41 @@ let vue = (name)=> {
                 )
                 websuccess(name)
             }
-        }) 
+            console.log(stderr)
+        })
     }
 
-    // const phase2 = () => {
-    //     cp.exec(`create-vue-app ${name}`,  (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-            
-    //         if(stdout) console.log(stdout)
-    //     }) 
-    // }
-
-    // const phase3 = () => {
-    //     cp.exec(`git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-    
-    //         if(stdout) console.log(stdout)
-    //     })
-    // }
-
-    // const phase4 = () => {
-    //     cp.exec(`hub create --private`, (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-    
-    //         if(stdout) {
-    //             console.log(`Scaffolding: \n\x1b[33m`, stdout,
-    //             `****************************************\n`,
-    //             `WE Have Successfully Pushed The Project \n`,
-    //             `______________^(* _ *)^________________\n`,
-    //             `************* ENJOY!!! *****************\n`,
-    //             `************* HAPPY CODING *************`
-    //             )
-    //             websuccess(name)
-    //         }
-    //     })
-    // }
-   
-    // async function initproject_phase1() {
-    //     await phase1()
-
-    //     phase2()
-    // }
-    
-    // async function initproject_phase2() {
-    //     await initproject_phase1()
-
-    //     phase3()
-    // }
-
-    // async function initproject(){
-    //     await initproject_phase2()
-
-    //     phase4()
-    // }
-    // initproject()
     phase1()
 
 }
 
+//Scafold Mobile Application
 let mobile = (name) => {
     const phase1 = () => {
-        cp.exec(`npm install -g ionic && ionic $name Blank && git init &&  add . && git commit -m "Initial Commit, Using VillageWorkCLI" && hub create --private`, (err, stdout, stderr) => {
+        cp.execSync(`npm install -g ionic`, (err, stdout, stderr) => {
             if(err) throw err
-    
-            if(stderr) console.log(stderr)
-            
-            
+            console.log(stdout)
+            console.log(stderr)
+        })
+        cp.execSync(`ionic ${name} Blank`,(err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+        cp.execSync(`git init &&  add .`,(err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console,log(stderr)
+        })
+        cp.execSync(`git commit -m "Initial Commit, Using VillageWorkCLI"`,(err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console,log(stderr)
+        })
+        cp.execSync(`hub create --private`, (err, stdout, stderr)=>{
+            if(err) throw err
             if(stdout) {
-                console.log(`Scaffolding: \n\x1b[33m`, stdout,
+                console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
                 `****************************************\n`,
                 `WE Have Successfully Pushed The Project \n`,
                 `______________^(* _ *)^________________\n`,
@@ -438,67 +308,10 @@ let mobile = (name) => {
                 )
                 websuccess(name)
             }
-        }) 
+            console.log(stderr)
+        })
     }
 
-    // const phase2 = () => {
-    //     cp.exec(`ionic $name Blank`, (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-            
-            
-    //         if(stdout) console.log(stdout)
-    //     })
-    // }
-
-    // const phase3 = () => {
-    //     cp.exec(`git init &&  add . && git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-    
-    //         if(stdout) console.log(stdout)
-    //     })
-    // }
-
-    // const phase4 = () => {
-    //     cp.exec(`hub create --private`, (err, stdout, stderr) => {
-    //         if(err) throw err
-    
-    //         if(stderr) console.log(stderr)
-    
-    //         if(stdout) {
-    //             console.log(`Scaffolding: \n\x1b[33m`, stdout,
-    //             `****************************************\n`,
-    //             `WE Have Successfully Pushed The Project \n`,
-    //             `______________^(* _ *)^________________\n`,
-    //             `************* ENJOY!!! *****************\n`,
-    //             `************* HAPPY CODING *************`
-    //             )
-    //             websuccess(name)
-    //         }
-    //     })
-    // }
-
-    // async function initproject_phase1() {
-    //     await phase1()
-
-    //     phase2()
-    // }
-    
-    // async function initproject_phase2() {
-    //     await initproject_phase1()
-
-    //     phase3()
-    // }
-
-    // async function initproject(){
-    //     await initproject_phase2()
-
-    //     phase4()
-    // }
-    // initproject()
     phase1()
 }
 exports.ndjs =  { angular, react , vue, emptypro, mobile}
