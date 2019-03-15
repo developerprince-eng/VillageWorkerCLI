@@ -108,7 +108,7 @@ let emptypro = (name) => {
             console.log(stderr)
         })
 
-        cp.execSync(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr) => {
+        cp.exec(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr) => {
             if(err) throw err
     
             if(stderr) console.log(stderr)
@@ -147,7 +147,7 @@ let angular = (name)=> {
             console.log(stderr)
         })
 
-        cp.execSync(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr)=>{
+        cp.exec(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
                 console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
@@ -188,7 +188,7 @@ let react = (name)=> {
             console.log(stderr)
         })
 
-        cp.execSync(`hub create --private && git push --set-upstream origin master`,(err, stdout, stderr)=>{
+        cp.exec(`hub create --private && git push --set-upstream origin master`,(err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
                 console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
@@ -241,7 +241,7 @@ let vue = (name)=> {
             console.log(stderr)
         })
 
-        cp.execSync(`hub create --private  && git push --set-upstream origin master`,(err, stdout, stderr)=>{
+        cp.exec(`hub create --private  && git push --set-upstream origin master`,(err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
                 console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
@@ -284,7 +284,7 @@ let mobile = (name) => {
             console.log(stdout)
             console,log(stderr)
         })
-        cp.execSync(`hub create --private && git push --set-upstream origin master`, (err, stdout, stderr)=>{
+        cp.exec(`hub create --private && git push --set-upstream origin master`, (err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
                 console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
