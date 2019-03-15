@@ -176,23 +176,10 @@ let react = (name)=> {
             console.log(stderr)           
         })
 
-        cp.execSync(`cd ${name}`,(err, stdout, stderr)=>{
+        cp.execSync(`cd ${name} && git init && git add .`,(err, stdout, stderr)=>{
             if(err) throw err
             console.log(stderr)
             console.log(stdout)
-        })
-
-        cp.execSync(`git init`,(err, stdout, stderr)=>{
-            if(err) throw err
-            console.log(stderr)
-            console.log(stdout)
-        })
-
-
-        cp.execSync(`git add .`, (err, stdout, stderr)=>{
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
         })
 
         cp.execSync(`git commit -m "Initial Commit, Using VillageWorkCLI"`,(err, stdout, stderr)=>{
