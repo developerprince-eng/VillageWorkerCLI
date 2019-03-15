@@ -1,6 +1,5 @@
 const cp = require(`child_process`);
 
-
 //Success Console Message 
 const websuccess = (name)=> {
     console.log(`\x1b[36m%s\x1b[0m`, name, `Web Application Scafolded Successfully...\n`,`\x1b[33m`,`Enjoy!!!`,`\x1b[0m`);
@@ -159,18 +158,6 @@ let angular = (name)=> {
             console.log(stdout)
         })
 
-        cp.execSync(`git add .`, (err, stdout, stderr)=>{
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-
-        cp.execSync(`git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr)=>{
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-
         cp.execSync(`hub create --private`, (err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
@@ -199,6 +186,19 @@ let react = (name)=> {
             console.log(stdout)
             console.log(stderr)           
         })
+
+        cp.execSync(`cd ${name}`,(err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stderr)
+            console.log(stdout)
+        })
+
+        cp.execSync(`git init`,(err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stderr)
+            console.log(stdout)
+        })
+
 
         cp.execSync(`git add .`, (err, stdout, stderr)=>{
             if(err) throw err
@@ -235,7 +235,7 @@ let react = (name)=> {
 //Scafold Vue Application
 let vue = (name)=> {
     const phase1 = () => {
-        cp.execSync(`npm install -g create-vue-app  && hub create --private`,  (err, stdout, stderr) => {
+        cp.execSync(`npm install -g create-vue-app`,  (err, stdout, stderr) => {
             if(err) throw err
             console.log(stderr)
             console.log(stdout)
@@ -247,6 +247,12 @@ let vue = (name)=> {
             console.log(stderr)
         })
 
+        cp.execSync(`cd ${name}`,(err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stderr)
+            console.log(stdout)
+        })
+
         cp.execSync(`git init && git add .`,(err, stdout, stderr)=>{
             if(err) throw err
             console.log(stdout)
@@ -254,6 +260,12 @@ let vue = (name)=> {
         })
 
         cp.execSync(`git commit -m "Initial Commit, Using VillageWorkCLI"`,(err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.execSync(`hub create --private`,(err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
                 console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
