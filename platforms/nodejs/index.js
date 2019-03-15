@@ -101,7 +101,11 @@ let emptypro = (name) => {
             console.log(stdout)
             console.log(stderr)
         })
-
+        cp.execSync(`cd ${name}`, (err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
         cp.execSync(`git init && git add .`, (err, stdout, stderr)=>{
             if(err) throw err
             console.log(stdout)
@@ -152,13 +156,7 @@ let angular = (name)=> {
             console.log(stderr)
         })
 
-        cp.execSync(`cd ${name}`,(err, stdout, stderr)=>{
-            if(err) throw err
-            console.log(stderr)
-            console.log(stdout)
-        })
-
-        cp.execSync(`hub create --private`, (err, stdout, stderr)=>{
+        cp.execSync(`cd ${name} && hub create --private`, (err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
                 console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
@@ -238,13 +236,13 @@ let vue = (name)=> {
         cp.execSync(`npm install -g create-vue-app`,  (err, stdout, stderr) => {
             if(err) throw err
             console.log(stderr)
-            console.log(stdout)
+            console.log(`Installed vue:`,stdout)
         }) 
 
         cp.execSync(`create-vue-app ${name}`,(err, stdout, stderr)=>{
             if(err) throw err
             console.log(stdout)
-            console.log(stderr)
+            console.log(`Created vueapp`,stderr)
         })
 
         cp.execSync(`cd ${name}`,(err, stdout, stderr)=>{
@@ -293,7 +291,7 @@ let mobile = (name) => {
             console.log(stdout)
             console.log(stderr)
         })
-        cp.execSync(`ionic ${name} Blank`,(err, stdout, stderr)=>{
+        cp.execSync(`ionic start ${name} Blank`,(err, stdout, stderr)=>{
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
