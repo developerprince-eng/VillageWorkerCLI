@@ -108,7 +108,7 @@ let emptypro = (name) => {
             console.log(stderr)
         })
 
-        cp.execSync(`hub create --private && git push`, (err, stdout, stderr) => {
+        cp.execSync(`cd ${name} && hub create --private && git push`, (err, stdout, stderr) => {
             if(err) throw err
     
             if(stderr) console.log(stderr)
