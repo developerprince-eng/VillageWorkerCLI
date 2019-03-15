@@ -101,23 +101,14 @@ let emptypro = (name) => {
             console.log(stdout)
             console.log(stderr)
         })
-        cp.execSync(`cd ${name}`, (err, stdout, stderr)=>{
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-        cp.execSync(`git init && git add .`, (err, stdout, stderr)=>{
+     
+        cp.execSync(`cd ${name} && git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" `, (err, stdout, stderr)=>{
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
 
-        cp.execSync(`git commit -m "Initial Commit, Using VillageWorkCLI"`, (err, stdout, stderr)=>{
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-        cp.execSync(`hub create --private`, (err, stdout, stderr) => {
+        cp.execSync(`hub create --private && git push`, (err, stdout, stderr) => {
             if(err) throw err
     
             if(stderr) console.log(stderr)
@@ -156,7 +147,7 @@ let angular = (name)=> {
             console.log(stderr)
         })
 
-        cp.execSync(`cd ${name} && hub create --private`, (err, stdout, stderr)=>{
+        cp.execSync(`cd ${name} && hub create --private && git push`, (err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
                 console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
@@ -263,7 +254,7 @@ let vue = (name)=> {
             console.log(stderr)
         })
 
-        cp.execSync(`hub create --private`,(err, stdout, stderr)=>{
+        cp.execSync(`hub create --private  && git push`,(err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
                 console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
@@ -306,7 +297,7 @@ let mobile = (name) => {
             console.log(stdout)
             console,log(stderr)
         })
-        cp.execSync(`hub create --private`, (err, stdout, stderr)=>{
+        cp.execSync(`hub create --private && git push`, (err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
                 console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
