@@ -253,7 +253,7 @@ let vue = (name)=> {
             console.log(stdout)
         })
 
-        cp.execSync(`git init && git add .`,(err, stdout, stderr)=>{
+        cp.execSync(`git add .`,(err, stdout, stderr)=>{
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
