@@ -5,6 +5,22 @@ const websuccess = (name)=> {
     console.log(`\x1b[36m%s\x1b[0m`, name, `Web Application Scafolded Successfully...\n`,`\x1b[33m`,`Enjoy!!!`,`\x1b[0m`);
 } 
 
+//Success Console Message for Web Scaffolding
+const webscaf = (stdout) =>{
+    console.log(
+        `****************************************\n`,
+        `#####Lets Switch up things a little#####\n`,
+        `****************************************\n`,
+        `Now Lets Do Magic using Hub to Access Github\n`,
+        `****************************************\n`,
+        `Scaffolding: \n\x1b[33m`, stdout,
+        `****************************************\n`,
+        `WE Have Successfully Pushed The Project \n`,
+        `______________^(* _ *)^________________\n`,
+        `************* ENJOY!!! *****************\n`,
+        `************* HAPPY CODING *************`)
+}
+
 //Empty project Scafold
 let emptypro = (name) => {
     const phase1 = () => {
@@ -113,19 +129,12 @@ let emptypro = (name) => {
     
             if(stderr) console.log(stderr)
     
-            if(stdout) console.log(stdout,
-                `****************************************\n`,
-                `#####Lets Switch up things a little#####\n`,
-                `****************************************\n`,
-                `Now Lets Do Magic using Hub to Access Github\n`,
-                `****************************************\n`,
-                `Scaffolding: \n\x1b[33m`, stdout,
-                `****************************************\n`,
-                `WE Have Successfully Pushed The Project \n`,
-                `______________^(* _ *)^________________\n`,
-                `************* ENJOY!!! *****************\n`,
-                `************* HAPPY CODING *************`)
-                websuccess()
+            if(stdout) {
+                webscaf(stdout)
+                websuccess(name)
+            }
+
+                
         })
     }
    
@@ -150,13 +159,7 @@ let angular = (name)=> {
         cp.exec(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
-                console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
-                `****************************************\n`,
-                `WE Have Successfully Pushed The Project \n`,
-                `______________^(* _ *)^________________\n`,
-                `************* ENJOY!!! *****************\n`,
-                `************* HAPPY CODING *************`
-                )
+                webscaf(stdout)
                 websuccess(name)
             }
             console.log(stderr)
@@ -188,16 +191,10 @@ let react = (name)=> {
             console.log(stderr)
         })
 
-        cp.exec(`hub create --private && git push --set-upstream origin master`,(err, stdout, stderr)=>{
+        cp.exec(`cd ${name} && hub create --private && git push --set-upstream origin master`,(err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
-                console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
-                `****************************************\n`,
-                `WE Have Successfully Pushed The Project \n`,
-                `______________^(* _ *)^________________\n`,
-                `************* ENJOY!!! *****************\n`,
-                `************* HAPPY CODING *************`
-                )
+                webscaf(stdout)
                 websuccess(name)
             }   
             console.log(stderr)
@@ -223,34 +220,16 @@ let vue = (name)=> {
             console.log(`Created vueapp`,stderr)
         })
 
-        cp.execSync(`cd ${name}`,(err, stdout, stderr)=>{
-            if(err) throw err
-            console.log(stderr)
-            console.log(stdout)
-        })
-
-        cp.execSync(`git add .`,(err, stdout, stderr)=>{
+        cp.execSync(`cd ${name} && git add . && git commit -m "Initial Commit, Using VillageWorkCLI"`,(err, stdout, stderr)=>{
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
 
-        cp.execSync(`git commit -m "Initial Commit, Using VillageWorkCLI"`,(err, stdout, stderr)=>{
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-
-        cp.exec(`hub create --private  && git push --set-upstream origin master`,(err, stdout, stderr)=>{
+        cp.exec(`cd ${name} && hub create --private  && git push --set-upstream origin master`,(err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
-                console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,
-                `****************************************\n`,
-                `WE Have Successfully Pushed The Project \n`,
-                `______________^(* _ *)^________________\n`,
-                `************* ENJOY!!! *****************\n`,
-                `************* HAPPY CODING *************`
-                )
+                webscaf(stdout)
                 websuccess(name)
             }
             console.log(stderr)
@@ -274,17 +253,12 @@ let mobile = (name) => {
             console.log(stdout)
             console.log(stderr)
         })
-        cp.execSync(`git init &&  add .`,(err, stdout, stderr)=>{
+        cp.execSync(`cd ${name} && git init &&  add . && git commit -m "Initial Commit, Using VillageWorkCLI"`,(err, stdout, stderr)=>{
             if(err) throw err
             console.log(stdout)
             console,log(stderr)
         })
-        cp.execSync(`git commit -m "Initial Commit, Using VillageWorkCLI"`,(err, stdout, stderr)=>{
-            if(err) throw err
-            console.log(stdout)
-            console,log(stderr)
-        })
-        cp.exec(`hub create --private && git push --set-upstream origin master`, (err, stdout, stderr)=>{
+        cp.exec(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr)=>{
             if(err) throw err
             if(stdout) {
                 console.log(`Pushing Scaffolded: \n\x1b[33m`, stdout,

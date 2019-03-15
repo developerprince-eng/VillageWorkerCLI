@@ -1,6 +1,6 @@
 {
   "name": "villageworkcli-work",
-  "version": "1.0.37",
+  "version": "1.1.0",
   "description": "VillageWork Command Line Interface",
   "main": "index.js",
   "bin": {
