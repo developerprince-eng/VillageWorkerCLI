@@ -41,7 +41,7 @@ ssh-keygen
 >Your identification has been saved in dev.
 >Your public key has been saved in dev.pub.
 >The key fingerprint is:
->SHA256:3n/VSGi2kECINeXhJh4QA41kzxc6xftvhmvKY0T/0ec DeveloperPrince@DESKTOP-8H2HM8A
+>SHA256:************************************ DeveloperPrince@DESKTOP-8H2HM8A
 >The key's randomart image is:
 +---[RSA 2048]----+
 | .+++==++        |
