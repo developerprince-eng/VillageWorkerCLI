@@ -2,11 +2,13 @@
 
 const program = require(`commander`)
 const nd = require(`./platforms/nodejs/index`)
+const isWin = process.platform === "win32";
 
 program
-    .version(`1.1.0`, `-v, --version`)
+    .version(`1.1.2`, `-v, --version`)
 
 //This is for Scafolding a project
+
 program
     .usage(`[commands] <filename> <type> <options1> <options2>`)
     .command(`web-node <name> <type>`) 
