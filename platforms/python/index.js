@@ -1,0 +1,145 @@
+const cp = require(`child_process`);
+
+//Success Console Message 
+const websuccess = (name)=> {
+    console.log(`\x1b[36m%s\x1b[0m`, name, `Web Application Scafolded Successfully...\n`,`\x1b[33m`,`Enjoy!!!`,`\x1b[0m`);
+} 
+
+//Success Console Message for Web Scaffolding
+const webscaf = (stdout) =>{
+    console.log(
+        `****************************************\n`,
+        `#####Lets Switch up things a little#####\n`,
+        `****************************************\n`,
+        `Now Lets Do Magic using Hub to Access Github\n`,
+        `****************************************\n`,
+        `Scaffolding: \n\x1b[33m`, stdout,
+        `****************************************\n`,
+        `WE Have Successfully Pushed The Project \n`,
+        `______________^(* _ *)^________________\n`,
+        `************* ENJOY!!! *****************\n`,
+        `************* HAPPY CODING *************`)
+}
+
+//Empty project Scafold
+let emptypro = (name) => {
+    const phase1 = () => {
+        cp.execSync(`mkdir ${name} && cd ${name}`, (err, stdout, stderr) => {
+            if(err) throw err
+            if(stdout) console.log(`Creating Root Project: Folder\n`, stdout,`\x1b[36m \nNow in Current Working Directory: \n `, `\x1b[0m`,
+            `****************************************\n`,
+            `******* CREATING A NEW PROJECT *********\n`,
+            `****************************************\n`
+            )
+            console.log(stderr)
+        })
+        
+        cp.execSync(`mkdir ${name}\\models && mkdir ${name}\\controllers && mkdir ${name}\\views`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/models/user.models.js`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/models/password.models.js`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/models/log.models.js`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/controllers/user.controller.js`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/controllers/passwords.controller.js`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/controllers/logs.controller.js`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/views/signin.view.ejs`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/views/signup.view.ejs`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/views/home.view.ejs`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/views/logs.view.ejs`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/views/dashboard.view.ejs`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/views/signin.view.ejs`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+        
+        cp.execSync(`type nul>${name}/app.js`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+     
+        cp.execSync(`cd ${name} && git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" `, (err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.exec(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) {
+                webscaf(stdout)
+                websuccess(name)
+            }
+
+                
+        })
+    }
+   
+    phase1()
+}
+
+exports.ndjs =  { emptypro}
+
