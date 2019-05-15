@@ -1,4 +1,5 @@
 const cp = require(`child_process`);
+const isWin = process.platform === "win32";
 
 //Success Console Message 
 const websuccess = (name)=> {
@@ -45,7 +46,13 @@ let emptypro = (name) => {
             console.log(stdout)
             console.log(stderr)
         })
-    
+
+        cp.execSync(`type nul>${name}/instance/config.py`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+
         cp.execSync(`type nul>${name}/.gitignore`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
@@ -129,67 +136,67 @@ let emptypro = (name) => {
             console.log(stderr)
         })
         
-        cp.execSync(`mkdir ${name}\\${name}`, (err, stdout, stderr) => {
+        cp.execSync(`mkdir ${name}/${name}`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`mkdir ${name}\\instance`, (err, stdout, stderr) => {
+        cp.execSync(`mkdir ${name}/instance`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/.gitignore`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/.gitignore`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/config.py`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/config.py`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/db_create.py`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/db_create.py`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/forms.py`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/forms.py`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/${name}.db`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/${name}.db`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/Procfile`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/Procfile`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/README.md`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/README.md`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/requirements.txt`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/requirements.txt`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`tocuh . ${name}/run.py`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/run.py`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
@@ -200,8 +207,8 @@ let emptypro = (name) => {
             console.log(stdout)
             console.log(stderr)
         })
-
         cp.exec(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr) => {
+
             if(err) throw err
     
             if(stderr) console.log(stderr)
@@ -218,10 +225,10 @@ let emptypro = (name) => {
     }
 
     else{
-        phase2
+        phase2()
     }
     
 }
 
-exports.py=  { emptypro}
+exports.py=  {emptypro}
 

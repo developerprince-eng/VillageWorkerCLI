@@ -3,7 +3,6 @@
 const program = require(`commander`)
 const nd = require(`./platforms/nodejs/index`)
 const webpy = require(`./platforms/python/index`)
-const isWin = process.platform === "win32";
 
 program
     .version(`1.1.2`, `-v, --version`)
@@ -24,11 +23,11 @@ program
 
 program
     .usage(`[commands] <filename> <type> <options1> <options2>`)
-    .command(`web-py <name>`)
+    .command(`web-py <name> <type>`)
     .option(`-g --generate`, `Trigger Generation Operation`)
     .option(`-p --project`)
-    .action((name) => {
-        webpy.py.emptypro(name)
+    .action((name, type) => {
+       if (type == `empty`) webpy.py.emptypro(name)
     })
 
 program

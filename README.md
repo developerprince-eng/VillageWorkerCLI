@@ -19,7 +19,9 @@ Before You rock on using some crazy project automation, you need the following t
 2.) The Next step is you need to set up is hub for github cli an automation  cli, install scoop for windows using **powershell**        (This doesn't work on with cmd only **powershell**). If you are using Linux system I happy to announce that powershell is now       crossplatform there you can get it [here](https://github.com/powershell/powershell).(We will be glade to have you try this out      in linux, but it should work.)
 
 #### NOTE: 
-Powershell is now also available for Unix based system and you can execute and run powershell in an Unix Environment.
+Powershell is now also available for Unix based system and you can execute and run powershell in an Unix Environment. Take note if you are using Legacy Unix Base OS's you are likely going to run Powershell especially on Ubuntu. In the event you are using Distros such as POP Os they don't come with libicu6 and other libraries which are essential to support and run powershell. Our Dev Community are tirelessy working on increasing support and experience for all developers and Systems.
+
+#### For Win32 Environment(For Windows)
 ```bash
 
  [environment]::setEnvironmentVariable('SCOOP','C:\Applications\Scoop','User')
@@ -28,6 +30,19 @@ Powershell is now also available for Unix based system and you can execute and r
  scoop install hub
 
  ```
+
+ #### For Unix Environment 
+
+ For Unix Based Environment You can install hub directly withouth the use of a scoop as scoop is for windows based users
+
+ ```bash
+##Linux Distro
+sudo apt install hub
+
+##Debian Disto
+sudo apt-get install hub
+```
+
 3.) Download and install [git](https://git-scm.com/downloads) if not installed on machine.
 
 4.) In your root folder for probably in Documents (for this you probably need to even modify to a        more secure folder setup, but just use Documents for now). generate and ssh key both public and      private key which enable you to ssh to github then once you are done you copy the public key to      github [settings](https://github.com/settings/keys)
@@ -41,7 +56,7 @@ ssh-keygen
 >Your identification has been saved in dev.
 >Your public key has been saved in dev.pub.
 >The key fingerprint is:
->SHA256:************************************ DeveloperPrince@DESKTOP-8H2HM8A
+>SHA256:************************************ DeveloperPrince@DESKTOP-#@&9**&!
 >The key's randomart image is:
 +---[RSA 2048]----+
 | .+++==++        |
@@ -105,6 +120,15 @@ villageworkcli web-node <project name> vue --generate --project
 villageworkcli mobile <project name> --generate --project 
 ```
 
+## Web Python Flask Development Support
+
+villageworkcli now suppports flask development set up from you locally machine and commits a git repo both locally and remotely.
+Currently the Version is highly unstable as it is undergoing rapid proto typing and alterations.
+
+```bash
+##Empty Flask MVC Project:
+villagerworkcli web-py <project name> empty --generate --project
+```
 ## Contact 
 
 This is a product of Kubaki Developer Team led by Developer Prince, Lead Developer and System Technological Officer at the Techvillage. 

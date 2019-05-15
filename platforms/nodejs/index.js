@@ -1,4 +1,5 @@
 const cp = require(`child_process`);
+const isWin = process.platform === "win32";
 
 //Success Console Message 
 const websuccess = (name)=> {
@@ -21,8 +22,6 @@ const webscaf = (stdout) =>{
         `************* HAPPY CODING *************`)
 }
 
-const isWin = process.platform === "win32";
-
 
 //Empty project Scafold
 let emptypro = (name) => {
@@ -43,19 +42,19 @@ let emptypro = (name) => {
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/models/user.models.js`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/models/users.models.js`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/models/password.models.js`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/models/passwords.models.js`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/models/log.models.js`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/models/logs.models.js`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
@@ -67,13 +66,13 @@ let emptypro = (name) => {
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/controllers/passwords.controller.js`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/controllers/password.controller.js`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/controllers/logs.controller.js`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/controllers/log.controller.js`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
@@ -97,7 +96,7 @@ let emptypro = (name) => {
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/views/logs.view.ejs`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/views/log.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
@@ -135,9 +134,7 @@ let emptypro = (name) => {
             if(stdout) {
                 webscaf(stdout)
                 websuccess(name)
-            }
-
-                
+            }                
         })
     }
 
@@ -152,85 +149,85 @@ let emptypro = (name) => {
             console.log(stderr)
         })
         
-        cp.execSync(`mkdir ${name}\\models && mkdir ${name}\\controllers && mkdir ${name}\\views`, (err, stdout, stderr) => {
+        cp.execSync(`mkdir ${name}/models && mkdir ${name}/controllers && mkdir ${name}/views`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/models/user.models.js`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/models/users.models.js`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/models/password.models.js`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/models/passwords.models.js`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/models/log.models.js`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/models/logs.models.js`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/controllers/user.controller.js`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/controllers/user.controller.js`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/controllers/passwords.controller.js`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/controllers/password.controller.js`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/controllers/logs.controller.js`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/controllers/log.controller.js`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/views/signin.view.ejs`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/views/signin.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`tocuh . ${name}/views/signup.view.ejs`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/views/signup.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/views/home.view.ejs`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/views/home.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/views/logs.view.ejs`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/views/logs.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`tocuh . ${name}/views/dashboard.view.ejs`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/views/dashboard.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`touch . ${name}/views/signin.view.ejs`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/views/signin.view.ejs`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
         
-        cp.execSync(`touch . ${name}/app.js`, (err, stdout, stderr) => {
+        cp.execSync(`touch ${name}/app.js`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
