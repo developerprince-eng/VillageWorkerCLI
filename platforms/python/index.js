@@ -34,90 +34,72 @@ let emptypro = (name) => {
             console.log(stderr)
         })
         
-        cp.execSync(`mkdir ${name}\\models && mkdir ${name}\\controllers && mkdir ${name}\\views`, (err, stdout, stderr) => {
+        cp.execSync(`mkdir ${name}\\${name}`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/models/user.models.js`, (err, stdout, stderr) => {
+        cp.execSync(`mkdir ${name}\\instance`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/models/password.models.js`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/.gitignore`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/models/log.models.js`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/config.py`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/controllers/user.controller.js`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/db_create.py`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/controllers/passwords.controller.js`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/forms.py`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/controllers/logs.controller.js`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/${name}.db`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/views/signin.view.ejs`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/Procfile`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/views/signup.view.ejs`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/README.md`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/views/home.view.ejs`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/requirements.txt`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/views/logs.view.ejs`, (err, stdout, stderr) => {
+        cp.execSync(`type nul>${name}/run.py`, (err, stdout, stderr) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
     
-        cp.execSync(`type nul>${name}/views/dashboard.view.ejs`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/views/signin.view.ejs`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-        
-        cp.execSync(`type nul>${name}/app.js`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-     
         cp.execSync(`cd ${name} && git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" `, (err, stdout, stderr)=>{
             if(err) throw err
             console.log(stdout)
@@ -132,14 +114,114 @@ let emptypro = (name) => {
             if(stdout) {
                 webscaf(stdout)
                 websuccess(name)
-            }
-
-                
+            }   
         })
     }
    
-    phase1()
+    const phase2 = () => {
+        cp.execSync(`mkdir ${name} && cd ${name}`, (err, stdout, stderr) => {
+            if(err) throw err
+            if(stdout) console.log(`Creating Root Project: Folder\n`, stdout,`\x1b[36m \nNow in Current Working Directory: \n `, `\x1b[0m`,
+            `****************************************\n`,
+            `******* CREATING A NEW PROJECT *********\n`,
+            `****************************************\n`
+            )
+            console.log(stderr)
+        })
+        
+        cp.execSync(`mkdir ${name}\\${name}`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`mkdir ${name}\\instance`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`touch . ${name}/.gitignore`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`touch . ${name}/config.py`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`touch . ${name}/db_create.py`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`type nul>${name}/forms.py`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`touch . ${name}/${name}.db`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`touch . ${name}/Procfile`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`touch . ${name}/README.md`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`touch . ${name}/requirements.txt`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`tocuh . ${name}/run.py`, (err, stdout, stderr) => {
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+    
+        cp.execSync(`cd ${name} && git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" `, (err, stdout, stderr)=>{
+            if(err) throw err
+            console.log(stdout)
+            console.log(stderr)
+        })
+
+        cp.exec(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) {
+                webscaf(stdout)
+                websuccess(name)
+            }   
+        })
+    }
+
+    if(isWin){
+        phase1()
+    }
+
+    else{
+        phase2
+    }
+    
 }
 
-exports.ndjs =  { emptypro}
+exports.py=  { emptypro}
 

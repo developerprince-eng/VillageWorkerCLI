@@ -2,6 +2,7 @@
 
 const program = require(`commander`)
 const nd = require(`./platforms/nodejs/index`)
+const webpy = require(`./platforms/python/index`)
 const isWin = process.platform === "win32";
 
 program
@@ -19,6 +20,15 @@ program
         else if(type == `angular`) nd.ndjs.angular(name)
         else if(type == `react`) nd.ndjs.react(name)
         else if(type == `vue`) nd.ndjs.vue(name)
+    })
+
+program
+    .usage(`[commands] <filename> <type> <options1> <options2>`)
+    .command(`web-py <name>`)
+    .option(`-g --generate`, `Trigger Generation Operation`)
+    .option(`-p --project`)
+    .action((name) => {
+        webpy.py.emptypro(name)
     })
 
 program
