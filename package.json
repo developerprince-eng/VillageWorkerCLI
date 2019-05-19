@@ -15,7 +15,8 @@
   "author": "Developer Princee",
   "license": "MIT",
   "dependencies": {
-    "commander": "^2.19.0"
+    "commander": "^2.19.0",
+    "internet-available": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^5.14.1"
