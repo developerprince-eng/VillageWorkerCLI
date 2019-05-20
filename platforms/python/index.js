@@ -149,7 +149,7 @@ let webscaf = (stdout) =>{
 
 //Write Files Function for Flask Project
 let writeFiles = (name) => {
-    const viewsdata = `import os\nfrom flask flash, redirect, render_template, url_for, request\nfrom werkzeug.security import generate_password_hash\nfrom werkzeug.utils import secure_filename\nfrom . import app\n\n#BAD REQUEST\n@app.errorhandler(400)\ndef resource_error(e):\n\treturn render_template('400.html'), 400\n\n#FORBIDDEN ERROR\n@app.errorhandler(403)\ndef forbidden(e):\nreturn render_template('403.html'), 403\n\n#NOT ALLOWED ERROR\n@app.errorhandler(405)\ndef method_not_allowed(e):\n\treturn render_template('405.html'), 405\n\n#NOT FOUND ERROR\n@app.errorhandler(404)\ndef page_not_found(e):\n\treturn render_template('404.html'), 404\n\n#NOT FOUND ERROR\n@app.errorhandler(404)\ndef page_not_found(e):\ntreturn render_template('404.html'), 404\n\n#SERVER INTERNAL ERROR\n@app.errorhandler(500)\ndef server_error(e):\n\treturn render_template('500.html'), 500\n\n#BAD GATEWAY\n@app.errorhandler(502)\ndef server_error_bad_gateway(e):\n\treturn render_template('502.html'), 502\n\n#GATEWAY TIMEOUT\n@app.errorhandler(504)\ndef server_error_gateway_timeout(e):\n\treturn render_template('504.html'), 504\n\n`
+    const viewsdata = `import os\nfrom flask flask, redirect, render_template, url_for, request\nfrom werkzeug.security import generate_password_hash\nfrom werkzeug.utils import secure_filename\nfrom . import app\n\n#BAD REQUEST\n@app.errorhandler(400)\ndef resource_error(e):\n\treturn render_template('400.html'), 400\n\n#FORBIDDEN ERROR\n@app.errorhandler(403)\ndef forbidden(e):\nreturn render_template('403.html'), 403\n\n#NOT ALLOWED ERROR\n@app.errorhandler(405)\ndef method_not_allowed(e):\n\treturn render_template('405.html'), 405\n\n#NOT FOUND ERROR\n@app.errorhandler(404)\ndef page_not_found(e):\n\treturn render_template('404.html'), 404\n\n#NOT FOUND ERROR\n@app.errorhandler(404)\ndef page_not_found(e):\ntreturn render_template('404.html'), 404\n\n#SERVER INTERNAL ERROR\n@app.errorhandler(500)\ndef server_error(e):\n\treturn render_template('500.html'), 500\n\n#BAD GATEWAY\n@app.errorhandler(502)\ndef server_error_bad_gateway(e):\n\treturn render_template('502.html'), 502\n\n#GATEWAY T${name}OUT\n@app.errorhandler(504)\ndef server_error_gateway_t${name}out(e):\n\treturn render_template('504.html'), 504\n\n`
 
     const streamErrorCSS = fs.createWriteStream(`${name}/${name}/static/assets/error/css/style.css`)
         streamErrorCSS.once(`open`, function(fd){
@@ -428,14 +428,13 @@ let writeFiles = (name) => {
 
     const streamInit = fs.createWriteStream(`${name}/${name}/__init__.py`)
         streamInit.once(`open`, function(fd){
-            streamInit.write(viewsdata)
             streamInit.write(`from flask import Flask\n`)
             streamInit.write(`from flask_sqlalchemy import SQLAlchemy\n`)
             streamInit.write(`from flask_login import LoginManager\n`)
-            streamInit.write(`from ime import models\n`)
+            streamInit.write(`from ${name} import models\n`)
             streamInit.write(`from .views import *\n\n`)
             streamInit.write(`lm = LoginManager()\n`)
-            streamInit.write(`app = Flask(__name__, instance_relative_config=Tr\n`)
+            streamInit.write(`app = Flask(__name__, instance_relative_config=True)\n`)
             streamInit.write(`app.config.from_object('config')\n`)
             streamInit.write(`app.config.update(\n\t`)
             streamInit.write(`SECRETE_KEY = '${name}2019',\n\t`)
@@ -449,8 +448,8 @@ let writeFiles = (name) => {
 
     const streamModel = fs.createWriteStream(`${name}/${name}/models.py`)
         streamModel.once(`open`, function(fd){
-            streamModel.write(`import datetime\n`)
-            streamModel.write(`from datetime import datetime\n`)
+            streamModel.write(`import datet${name}\n`)
+            streamModel.write(`from datet${name} import datet${name}\n`)
             streamModel.write(`from flask_login import UserMixin\n`)
             streamModel.write(`from sqlalchemy.orm import backref\n`)
             streamModel.write(`from sqlalchemy.dialects.postgresql import JSON\n`)
@@ -513,7 +512,7 @@ let writeFiles = (name) => {
 
     const streamDBcreate = fs.createWriteStream(`${name}/db_create.py`)
         streamDBcreate.once(`open`, function(fd){
-            streamDBcreate.write(`from ime import db\n\ndb.create_all()`)
+            streamDBcreate.write(`from ${name} import db\n\ndb.create_all()`)
     })
 
     const streamRequirements = fs.createWriteStream(`${name}/requirements.txt`)
@@ -564,7 +563,7 @@ let writeFiles = (name) => {
             streamConfig1.write(`DEBUG = False\n\t`)
             streamConfig1.write(`TESTING = False\n\t`)
             streamConfig1.write(`CSRF_ENABLED = True\n\t`)
-            streamConfig1.write(`SECRET_KEY = 'theIme2019#'\n\t`)
+            streamConfig1.write(`SECRET_KEY = 'the${name}2019#'\n\t`)
             streamConfig1.write(`SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']\n\n`)
             streamConfig1.write(`class ProductionConfig(Config):\n\t`)
             streamConfig1.write(`DEBUG = False\n\n`)
@@ -593,7 +592,7 @@ let writeFiles = (name) => {
         streamConfig.write(`DEBUG = False\n\t`)
         streamConfig.write(`TESTING = False\n\t`)
         streamConfig.write(`CSRF_ENABLED = True\n\t`)
-        streamConfig.write(`SECRET_KEY = 'theIme2019#'\n\t`)
+        streamConfig.write(`SECRET_KEY = 'the${name}2019#'\n\t`)
         streamConfig.write(`SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']\n\n`)
         streamConfig.write(`class ProductionConfig(Config):\n\t`)
         streamConfig.write(`DEBUG = False\n\n`)
@@ -816,7 +815,7 @@ let writeFiles = (name) => {
             stream504.write(`<div class='_404'>504</div>\n\t\t`)
             stream504.write(`<hr>\n\t\t`)
             stream504.write(`<div class='_1'>THE PAGE</div>n\t\t`)
-            stream504.write(`<div class='_2'>GATEWAY TIMEOUT</div>n\t\t`)
+            stream504.write(`<div class='_2'>GATEWAY T${name}OUT</div>n\t\t`)
             stream504.write(`<a class='btn' href='/'>BACK TO ${name} APP</a>n\t`)
             stream504.write(`</div>\n`)
             stream504.write(`</body>\n`)
