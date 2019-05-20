@@ -6,7 +6,7 @@ const webpy = require(`./platforms/python/index`)
 const configuration = require(`./platforms/config/index`)
  
 program
-    .version(`1.1.2`, `-v, --version`)
+    .version(`1.1.3`, `-v, --version`)
 
 //This is for Scafolding a project
 //NODEJS
