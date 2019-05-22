@@ -112,7 +112,6 @@ let coreScafolding = (name) =>  {
         console.log(stderr)
     })
 
-
     //CHECK FOR INTERNET CONNECTIVITY
     internetAvailable().then(function(){
         cp.execSync(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr) => {
@@ -448,8 +447,8 @@ let writeFiles = (name) => {
 
     const streamModel = fs.createWriteStream(`${name}/${name}/models.py`)
         streamModel.once(`open`, function(fd){
-            streamModel.write(`import datet${name}\n`)
-            streamModel.write(`from datet${name} import datet${name}\n`)
+            streamModel.write(`import datetime\n`)
+            streamModel.write(`from datetime import dateime\n`)
             streamModel.write(`from flask_login import UserMixin\n`)
             streamModel.write(`from sqlalchemy.orm import backref\n`)
             streamModel.write(`from sqlalchemy.dialects.postgresql import JSON\n`)
@@ -463,36 +462,36 @@ let writeFiles = (name) => {
             streamModel.write(`first_name = db.Column(db.String(120))\n\t`)
             streamModel.write(`surname = db.Column(db.String(120))\n\t`)
             streamModel.write(`email = db.Column(db.String(120), unique=True,index=True)\n\t`)
-            streamModel.write(`salt = db.Column(db.String(72))`)
+            streamModel.write(`salt = db.Column(db.String(72))\n\t`)
             streamModel.write(`password_hash = db.Column(db.String(200))\n\t`)
             streamModel.write(`dob = db.Column(db.Date)\n\t\n\n`)
-            streamModel.write(`def save(self):\n\t\t`)
-            streamModel.write(`db.session.add(self)\n\t\t`)
+            streamModel.write(`def save(self):\n\t`)
+            streamModel.write(`db.session.add(self)\n\t`)
             streamModel.write(`db.session.commit()\n\t\n\n`)
             streamModel.write(`@staticmethod\n\t`)
             streamModel.write(`@lm.user_loader\n\t`)
-            streamModel.write(`def load_user(user_id):\n\t\t`)
+            streamModel.write(`def load_user(user_id):\n\t`)
             streamModel.write(`return User.query.get(user_id)\n\t\n\n`)
-            streamModel.write(`def is_authenticate(self):\n\t\t`)
+            streamModel.write(`def is_authenticate(self):\n\t`)
             streamModel.write(`return True\n\t\n\n`)
-            streamModel.write(`def is_active(self):\n\t\t`)
+            streamModel.write(`def is_active(self):\n\t`)
             streamModel.write(`return True\n\t\n\n`)
-            streamModel.write(`def def is_anonymous(self):\n\t\t`)
+            streamModel.write(`def is_anonymous(self):\n\t`)
             streamModel.write(`return False\n\t\n\n`)
-            streamModel.write(`def get_id(self):\n\t\t`)
+            streamModel.write(`def get_id(self):\n\t`)
             streamModel.write(`return False\n\t\n\n`)
-            streamModel.write(`def __repr__(self):\n\t\t`)
+            streamModel.write(`def __repr__(self):\n\t`)
             streamModel.write(`return '<User %r>' % self.username\n\t\n\n`)
-            streamModel.write(`@property\n\t`)
-            streamModel.write(`def password(self):\n\t\t`)
+            streamModel.write(`@property\n`)
+            streamModel.write(`def password(self):\n\t`)
             streamModel.write(`raise AttributeError('password: write-only field')\n\t\n\n`)
-            streamModel.write(`@password.setter\n\t`)
-            streamModel.write(`def password(self, password):\n\t\t`)
+            streamModel.write(`@password.setter\n`)
+            streamModel.write(`def password(self, password):\n\t`)
             streamModel.write(`self.password_hash = generate_password_hash(password)\n\t\n\n`)
-            streamModel.write(`def check_password(self, password):\n\t\t`)
+            streamModel.write(`def check_password(self, password):\n\t`)
             streamModel.write(`return check_password_hash(self.password_hash, password)\n\t\n\n`)
-            streamModel.write(`@staticmethod\n\t`)
-            streamModel.write(`def get_by_email(email):\n\t\t`)
+            streamModel.write(`@staticmethod\n`)
+            streamModel.write(`def get_by_email(email):\n\t`)
             streamModel.write(`return User.query.filter_by(email=email).first()\n\t\n\n`)
         })
 
@@ -827,6 +826,11 @@ let writeFiles = (name) => {
 let emptypro = (name) => {
     let winenv = () => {
         coreScafolding(name)
+        cp.execSync(`type null>${name}/${name}.db`, (err, stdout, stderr) => {
+            if(err) throw err
+            if(stdout) console.log(`CREATE FOLDER:  ${name}/instance`)
+            console.log(stderr)
+        })
         writeFiles(name)
         cp.exec(`cd ${name} && git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" `, (err, stdout, stderr)=>{
             if(err) throw err
@@ -872,6 +876,11 @@ let emptypro = (name) => {
 
     let unixenv = () => {
         coreScafolding(name)
+        cp.execSync(`touch ${name}/${name}.db`, (err, stdout, stderr) => {
+            if(err) throw err
+            if(stdout) console.log(`CREATE FOLDER:  ${name}/instance`)
+            console.log(stderr)
+        })
         writeFiles(name)
         cp.exec(`cd ${name} && git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" `, (err, stdout, stderr)=>{
             if(err) throw err
