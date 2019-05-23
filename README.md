@@ -6,7 +6,7 @@ A command Line Interface used for automating Project Scafolding (Codename: anoli
 
 To Initiate Project Scafolding the CLI currently supports project scaffolding for nodejs application for 3 View Types, which is Angular, React & Vue Projects and this also allows to scaffold an Empty project is you desire to be outcome. This CLI also scaffolds mobile application development by using ionic aswell. The Scaffolding now offers python project scaffolding for flask based projects.
 
-The Current Version which is version 1.1.3 is still in is Alpha form therefore you shall see rapid evolution of CLI as we progress with project with the Dev Team (Kubaki & Semina). 
+The Current Version which is version 1.1.6 is still in is Alpha form therefore you shall see rapid evolution of CLI as we progress with project with the Dev Team (Kubaki & Semina). 
 
 Currently the only operating system which allows for Scaffolding is Win32 OS & Unix.
 
