@@ -107,7 +107,13 @@ ssh-add <path-to-private-ssh-key>
 ```
 Once you see this then everything is good close your terminal.
 
-6.) Install villageworkcli globally on using you terminal or console 
+6.) Install Heroku cli on your terminal
+
+```bash
+npm i heroku -g
+```
+
+7.) Install villageworkcli globally on using you terminal or console 
 ```bash
 npm i villageworkcli-work -g 
 ```
@@ -127,8 +133,11 @@ villageworkcli config <host name>
 Then Add the path of public ssh
 
 ```bash
-villageworkcli config <path to public ssh>
+villageworkcli add-ssh <path to public ssh>
 ```
+
+#### NOTE: 
+config might run into errors in deployment is so please contact [Developer Prince](prince@techvillage.org.zw) or manually set up. with the above steps. In addtion config does not support automated HerokuCLI installation and setup
 
 Now that we are done let do the magic I suggest for scaffolding a new project you need to used git bash if on windows if on linux just use bash. The create directory of where you want scaffold a project and run your console in th create folder perform step: 5 in the `Requirements` section once an ssh section is created then either of the following commands, and see magic happen.
 

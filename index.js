@@ -42,7 +42,7 @@ program
 //ADD SSH
 program
     .usage(`[commamds] <addssh> <ssh-path>`)
-    .command(`addssh <path>`)
+    .command(`add-ssh <path>`)
     .action((path)=>{
         configuration.configuration.addssh(path)
     })
