@@ -854,14 +854,14 @@ let emptypro = (name) => {
             console.log(stderr)
         })
         writeFiles(name)
-        cp.exec(`cd ${name} && git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" `, (err, stdout, stderr)=>{
+        cp.execSync(`cd ${name} && git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" `, (err, stdout, stderr)=>{
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
         })
         //CHECK FOR INTERNET CONNECTIVITY
         internetAvailable().then(function(){
-            cp.exec(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr) => {
+            cp.execSync(`cd ${name} && hub create --private && git push --set-upstream origin master && heroku login -i && heroku create ${name} && git push heroku master && heroku ps:scale web=1 && heroku ps:scale web=1`, (err, stdout, stderr) => {
                 if(err) throw err
         
                 if(stderr) console.log(stderr)
@@ -873,7 +873,6 @@ let emptypro = (name) => {
             })
         }).catch(function(){
             noConnectivity()
-            websuccess(name)
         })  
     }
 

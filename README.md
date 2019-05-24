@@ -6,7 +6,7 @@ A command Line Interface used for automating Project Scafolding (Codename: anoli
 
 To Initiate Project Scafolding the CLI currently supports project scaffolding for nodejs application for 3 View Types, which is Angular, React & Vue Projects and this also allows to scaffold an Empty project is you desire to be outcome. This CLI also scaffolds mobile application development by using ionic aswell. The Scaffolding now offers python project scaffolding for flask based projects.
 
-The Current Version which is version 1.1.6 is still in is Alpha form therefore you shall see rapid evolution of CLI as we progress with project with the Dev Team (Kubaki & Semina). 
+The Current Version which is version 1.1.7 is still in is Alpha form therefore you shall see rapid evolution of CLI as we progress with project with the Dev Team (Kubaki & Semina). 
 
 Currently the only operating system which allows for Scaffolding is Win32 OS & Unix.
 
@@ -160,6 +160,14 @@ Currently the Version is highly unstable as it is undergoing rapid proto typing 
 villagerworkcli web-py <project name> empty --generate --project
 ```
 We are glad to announce the pre-release of added functionality where one can add collaborators via the interface and the list all the contributors for project on github.
+
+```bash
+##Add Colloborator
+villageworkcli add-contributor <collaboID> <userGitHubID> <username> <password> <repo> 
+
+##List Collaborators
+villageworkcli list-contributors <username> <password> <repo>
+```
 ## Contact 
 
 This is a product of Kubaki Developer Team suported by Semina (Automation and AI specialists) led by Developer Prince, Lead Developer and System Technological Officer at the Techvillage. 
