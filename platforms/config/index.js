@@ -151,6 +151,5 @@ let listcontributors = (username, password, repo) => {
     }) 
 }
 
-}
 
 exports.configuration = {config, addssh, addcontributor, listcontributors}
