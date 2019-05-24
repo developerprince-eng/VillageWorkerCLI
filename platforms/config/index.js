@@ -25,7 +25,12 @@ const internetAvailable = require(`internet-available`)
 
 //no Connectivity Console Message2
 let noConnectivity0 = () => {
-    console.log(`No Connectivity\nPlease try again when there is connection\n`)
+    console.log(`No Connectivity or Some Error occured\nPlease try again later or communinicate with villageworkcli\n`)
+}
+
+//Contributor Added
+let contrinbutorAddedMessage = () => {
+    console.log(`Villaworkcli has added Contributor Sucessfully\n`)
 }
 
 //Directive 
@@ -34,7 +39,7 @@ let whatnext = () => {
 }
 
 let goodtogo = () => {
-    console.log(`Yes you have set up Successfully you are good to go`)
+    console.log(`Yes you have set up Successfully you are good to go\n`)
 }
 
 //Configuration
@@ -85,7 +90,7 @@ let config = (user) => {
 
     let unixenv = () => {
         internetAvailable().then(()=>{
-            cp.execSync(`sudo apt install hub`, (err, stdout, stderr)=>{
+            cp.execSync(`sudo apt-get install hub`, (err, stdout, stderr)=>{
                 if (err) throw err
                 console.log(stdout)
                 console.log(stderr)
@@ -128,5 +133,24 @@ let addssh = (path) => {
     })
 }
 
+let addcontributor = (username, password, githubid, repo ,collaboID) => {
+    cp.exec(`curl -i -u "${username}:${password}" -X PUT -d '' 'https://api.github.com/repos/${githubid}/${repo}/collaborators/${collaboID}'`, (err, stdout, stderr)=>{
+        if (err) throw err
+        console.log(stdout)
+        goodtogo()
+        console.log(stderr)
+    })
+}
 
-exports.configuration = {config, addssh}
+let listcontributors = (username, password, repo) => {
+    cp.exec(`curl -i -u "${username}:${password}" -X PUT -d '' 'https://api.github.com/repos/${username}/${repo}/collaborators'`, (err, stdout, stderr)=>{
+        if (err) throw err
+        console.log(stdout)
+        contrinbutorAddedMessage()
+        console.log(stderr)
+    }) 
+}
+
+}
+
+exports.configuration = {config, addssh, addcontributor, listcontributors}

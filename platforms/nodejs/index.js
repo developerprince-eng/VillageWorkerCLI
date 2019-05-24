@@ -52,103 +52,18 @@ const webscaf = (stdout) =>{
         `************* HAPPY CODING *************`)
 }
 
-
 //Empty project Scafold
 let emptypro = (name) => {
     //Scafolding for Windows Environment
     let winenv = () => {
-        cp.execSync(`mkdir ${name} && cd ${name}`, (err, stdout, stderr) => {
+        cp.execSync(`express --view=ejs ${name}`, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`Creating Root Project: Folder\n`, stdout,`\x1b[36m \nNow in Current Working Directory: \n `, `\x1b[0m`,
             `****************************************\n`,
             `******* CREATING A NEW PROJECT *********\n`,
             `****************************************\n`
             )
-            console.log(stderr)
-        })
-        
-        cp.execSync(`mkdir ${name}\\models && mkdir ${name}\\controllers && mkdir ${name}\\views`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/models/users.models.js`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/models/passwords.models.js`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/models/logs.models.js`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/controllers/user.controller.js`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/controllers/password.controller.js`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/controllers/log.controller.js`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/views/signin.view.ejs`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/views/signup.view.ejs`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/views/home.view.ejs`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/views/log.view.ejs`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/views/dashboard.view.ejs`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-    
-        cp.execSync(`type nul>${name}/views/signin.view.ejs`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
-        })
-        
-        cp.execSync(`type nul>${name}/app.js`, (err, stdout, stderr) => {
-            if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
+            console.log(stderr) 
         })
     
         cp.execSync(`cd ${name} && git init && git add . && git commit -m "Initial Commit, Using VillageWorkCLI" `, (err, stdout, stderr)=>{
@@ -321,7 +236,7 @@ let angular = (name)=> {
 
         //CHECK FOR INTERNET CONNECTIVITY
         internetAvailable().then(function(){
-            cp.exec(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr) => {
+            cp.exec(`cd ${name} && hub create --private && git push --set-upstream origin master && heroku login -i && heroku create ${name} && git push heroku master && heroku ps:scale web=1 && heroku ps:scale web=1`, (err, stdout, stderr) => {
                 if(err) throw err
         
                 if(stderr) console.log(stderr)

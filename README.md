@@ -159,7 +159,7 @@ Currently the Version is highly unstable as it is undergoing rapid proto typing 
 ##Empty Flask MVC Project:
 villagerworkcli web-py <project name> empty --generate --project
 ```
-
+We are glad to announce the pre-release of added functionality where one can add collaborators via the interface and the list all the contributors for project on github.
 ## Contact 
 
 This is a product of Kubaki Developer Team suported by Semina (Automation and AI specialists) led by Developer Prince, Lead Developer and System Technological Officer at the Techvillage. 

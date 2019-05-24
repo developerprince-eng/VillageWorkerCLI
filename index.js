@@ -56,5 +56,19 @@ program
     .action(name => {
         nd.ndjs.mobile(name)
     })
+//ADD PROJECT GITHUB COLLABORATOR
+program
+    .usage(`[commands] <repo> <options1> <options2> <option3> <option4>`)
+    .command(`add-contributor <collaboID> <userGitHubID> <username> <password> <repo>`)
+    .action((userGitHubID, username, password, repo, collaboID) => {
+        configuration.configuration.addcontributor(username, password, userGitHubID, repo, collaboID)
+    })
+//LIST CONTRIBUTORS
+program
+    .usage(`[commands] <`)
+    .command(`list-contributors <username> <password> <repo>`)
+    .action((repo, username, password) => {
+        configuration.configuration.listcontributors(username, password, repo)
+    })
 
 program.parse(process.argv)
