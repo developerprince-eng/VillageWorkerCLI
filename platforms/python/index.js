@@ -411,7 +411,7 @@ let writeFiles = (name) => {
 
     const streamProcFile = fs.createWriteStream(`${name}/Procfile`)
         streamProcFile.once(`open`, function(fd) {
-        streamProcFile.write(`web: gunicorn ${name}:app --preload`)
+        streamProcFile.write(`web: gunicorn ${name}:app\n`)
         streamProcFile.end();
     })
 
@@ -858,10 +858,10 @@ let emptypro = (name) => {
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
-        })
+        })-__filename
         //CHECK FOR INTERNET CONNECTIVITY
         internetAvailable().then(function(){
-            cp.execSync(`cd ${name} && hub create --private && git push --set-upstream origin master && heroku login -i && heroku create ${name} && git push heroku master && heroku ps:scale web=1 && heroku ps:scale web=1`, (err, stdout, stderr) => {
+            cp.execSync(`cd ${name} && hub create --private && git push --set-upstream origin master && heroku create ${name} && git push heroku master && heroku ps:scale web=1`, (err, stdout, stderr) => {
                 if(err) throw err
         
                 if(stderr) console.log(stderr)
