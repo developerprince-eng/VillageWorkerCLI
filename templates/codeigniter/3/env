@@ -1,0 +1,9 @@
+ACTIVE_GROUP="production"
+DATABASE="byocityc_byocitychurchsda"
+DATABASE_USER="byocitycentersda"
+DATABASE_PASSWORD="Ernv48#!"
+BASE_URL="http://localhost:8080/byocitycentersda-fullwebsite"
+POSTGRES_HOST="localhost:5324"
+POSTGRES_DBNAME="byocitychurchsda"
+PAYNOW_INTEGRATION_ID=null
+PAYNOW_KEY=null

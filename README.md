@@ -1,12 +1,14 @@
 # Village Work CLI
 
+![DeveloperPrince](https://developerprince.herokuapp.com/static/assets/images/logo.png)
+
 A command Line Interface used for automating Project Scafolding (Codename: anolis)
 
 ## Commnads
 
-To Initiate Project Scafolding the CLI currently supports project scaffolding for nodejs application for 3 View Types, which is Angular, React & Vue Projects and this also allows to scaffold an Empty project is you desire to be outcome. This CLI also scaffolds mobile application development by using ionic aswell. The Scaffolding now offers python project scaffolding for flask based projects.
+To Initiate Project Scafolding the CLI currently supports project scaffolding for nodejs application for 3 View Types, which is Angular, React & Vue Projects and this also allows to scaffold an Empty project is you desire to be outcome. This CLI also scaffolds mobile application development by using ionic aswell. The Scaffolding now offers python project scaffolding for flask based projects, ASP.NET Core project, php web application
 
-The Current Version which is version 1.1.11 is still in is Alpha form therefore you shall see rapid evolution of CLI as we progress with project with the Dev Team (Kubaki & Semina). 
+The Current Version which is version 1.1.13 is still in is Alpha form therefore you shall see rapid evolution of CLI as we progress with project with the Dev Team (Kubaki & Semina). 
 
 Currently the only operating system which allows for Scaffolding is Win32 OS & Unix.
 
@@ -158,6 +160,34 @@ villageworkcli web-node <project name> vue --generate --project
 ##Empty Mobile Application
 villageworkcli mobile <project name> --generate --project 
 ```
+## Web ASPNET CORE Development support
+
+```bash
+##Empty Nodejs MVC Project:
+villageworkcli web-dotnet <project name> empty --generate --project 
+
+##ASPDOTNET Angular Project
+villageworkcli web-dotnet <project name> angular --generate --project  
+
+##ASPDOTNET  React Project
+villageworkcli web-dotnet <project name> react --generate --project 
+
+##ASPDOTNET  GRPC Project
+villageworkcli web-dotnet <project name> grpc --generate --project 
+
+##Empty ASPDOTNET API
+villageworkcli web-dotnet <project name> rest --generate --project 
+
+```
+
+## Web PHP Developement Support 
+
+You can scafold a php based web project firstly using codeignter framework later will support laravel
+
+```bash
+##CODEIGNITER PROJECT USING VERSION 3 
+villageworkcli web-php <project name> cod3 --generate --project 
+```
 
 ## Web Python Flask Development Support
 
@@ -166,7 +196,10 @@ Currently the Version is highly unstable as it is undergoing rapid proto typing 
 
 ```bash
 ##Empty Flask MVC Project:
-villagerworkcli web-py <project name> empty --generate --project
+villageworkcli web-py <project name> empty --generate --project
+```
+```bash
+villageworkcli web-py <project name> rest --generate --project
 ```
 We are glad to announce the pre-release of added functionality where one can add collaborators via the interface and the list all the contributors for project on github.
 
