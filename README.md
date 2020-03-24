@@ -249,5 +249,9 @@ Villagework-CLI will also assist and Guide developers to document their projetct
 Villagework-CLI will have automated maintenance which invoke continous deployement and continous intergration.
 
 
+## Contributors
+
+1. Developer Prince
+2. Bukhosi Moyo
 
 
