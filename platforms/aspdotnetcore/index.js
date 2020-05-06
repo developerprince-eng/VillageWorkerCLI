@@ -56,7 +56,7 @@ const webscaf = (stdout) =>{
 let emptypro = (name) => {
     let universalenv = () => {
         //Download vuejs framework using npm (third party)
-        cp.execSync(`dotnew new webapp --name ${name}`,  (err, stdout, stderr) => {
+        cp.execSync(`dotnet new webapp --name ${name}`,  (err, stdout, stderr) => {
             if(err) throw err
             console.log(stderr)
             console.log(stdout)
@@ -169,7 +169,7 @@ let react = (name)=> {
 let api = (name)=> {
     let universalenv = () => {
         //Download vuejs framework using npm (third party)
-        cp.execSync(`dotnew new webapi --name ${name}`,  (err, stdout, stderr) => {
+        cp.execSync(`dotnet new webapi --name ${name}`,  (err, stdout, stderr) => {
             if(err) throw err
             console.log(stderr)
             console.log(`Installed vue:`,stdout)

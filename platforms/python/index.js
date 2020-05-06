@@ -25,7 +25,7 @@ const internetAvailable = require(`internet-available`)
 
 //Success Console Message 
 let websuccess = (name)=> {
-    console.log(`\x1b[36m%s\x1b[0m`, name, `Web Application Scafolded Successfully...\n`,`\x1b[33m`,`Enjoy!!!`,`\x1b[0m`);
+    console.log(`\x1b[36m%s\x1b[0m`, name, `Web Application Scaffolded Successfully...\n`,`\x1b[33m`,`Enjoy!!!`,`\x1b[0m`);
 } 
 
 //no Connectivity Console Message
@@ -33,8 +33,8 @@ let noConnectivity = () => {
     console.log(`No Connectivity\nProject will be pushed manually when connectivity is available\n`)
 }
 
-//Core Scafolding Operation
-let coreScafolding = (name) =>  {
+//Core Scaffolding Operation
+let coreScaffolding = (name) =>  {
     cp.execSync(`mkdir ${name} && cd ${name}`, (err, stdout, stderr) => {
         if(err) throw err
         if(stdout) console.log(`Creating Root Project: Folder\n`, stdout,`\x1b[36m \nNow in Current Working Directory: \n `, `\x1b[0m`,
@@ -107,6 +107,102 @@ let coreScafolding = (name) =>  {
     })
 
     cp.execSync(`mkdir ${name}/instance`, (err, stdout, stderr) => {
+        if(err) throw err
+        if(stdout) console.log(`CREATE FOLDER:  ${name}/instance`)
+        console.log(stderr)
+    })
+
+    //CHECK FOR INTERNET CONNECTIVITY
+    internetAvailable().then(function(){
+        cp.execSync(`cd ${name} && hub create --private && git push --set-upstream origin master`, (err, stdout, stderr) => {
+            if(err) throw err
+    
+            if(stderr) console.log(stderr)
+    
+            if(stdout) {
+                webscaf(stdout)
+                websuccess(name)
+            }   
+        })
+    }).catch(function(){
+        noConnectivity()
+        websuccess(name)
+    })   
+}
+
+let coreScaffoldingWin = (name) =>  {
+    cp.execSync(`mkdir ${name} && cd ${name}`, (err, stdout, stderr) => {
+        if(err) throw err
+        if(stdout) console.log(`Creating Root Project: Folder\n`, stdout,`\x1b[36m \nNow in Current Working Directory: \n `, `\x1b[0m`,
+        `****************************************\n`,
+        `******* CREATING A NEW PROJECT *********\n`,
+        `****************************************\n`
+        )
+        console.log(stderr)
+    })
+    
+    cp.execSync(`mkdir ${name}\\${name}`, (err, stdout, stderr) => {
+        if(err) throw err
+        if(stdout) console.log(`CREATE FOLDER:  ${name}/${name}`)
+        console.log(stderr)
+    })
+
+    cp.execSync(`mkdir ${name}\\${name}\\templates`, (err, stdout, stderr) => {
+        if(err) throw err
+        if(stdout) console.log(`CREATE FOLDER:  ${name}/${name}/templates`)
+        console.log(stderr)
+    })
+
+    cp.execSync(`mkdir ${name}\\${name}\\static`, (err, stdout, stderr) => {
+        if(err) throw err
+        if(stdout) console.log(`CREATE FOLDER:  ${name}\\${name}\\static`)
+        console.log(stderr)
+    })
+
+    cp.execSync(`mkdir ${name}\\${name}\\static\\assets`, (err, stdout, stderr) => {
+        if(err) throw err
+        if(stdout) console.log(`CREATE FOLDER:  ${name}/${name}/static/assets`)
+        console.log(stderr)
+    })
+
+    cp.execSync(`mkdir ${name}\\${name}\\static\\assets\\css`, (err, stdout, stderr) => {
+        if(err) throw err
+        if(stdout) console.log(`CREATE FOLDER:  ${name}/${name}/static/assets/css`)
+        console.log(stderr)
+    })
+
+    cp.execSync(`mkdir ${name}\\${name}\\static\\assets\\images`, (err, stdout, stderr) => {
+        if(err) throw err
+        if(stdout) console.log(`CREATE FOLDER:  ${name}/${name}/static/assets/images`)
+        console.log(stderr)
+    })
+
+    cp.execSync(`mkdir ${name}\\${name}\\static\\assets\\js`, (err, stdout, stderr) => {
+        if(err) throw err
+        if(stdout) console.log(`CREATE FOLDER:  ${name}/${name}/static/assets/js`)
+        console.log(stderr)
+    })
+
+    cp.execSync(`mkdir ${name}\\${name}\\static\\assets\\error`, (err, stdout, stderr) => {
+        if(err) throw err
+        console.log(stdout)
+        console.log(stderr)
+    })
+
+    cp.execSync(`mkdir ${name}\\${name}\\static\\assets\\error\\css`, (err, stdout, stderr) => {
+        if(err) throw err
+        if(stdout) console.log(`CREATE FOLDER:  ${name}/${name}/static/assets/error/css`)
+        console.log(stderr)
+    }) 
+
+
+    cp.execSync(`mkdir ${name}\\${name}\\helpers`, (err, stdout, stderr) => {
+        if(err) throw err
+        if(stdout) console.log(`CREATE FOLDER:  ${name}/${name}/helpers`)
+        console.log(stderr)
+    })
+
+    cp.execSync(`mkdir ${name}\\instance`, (err, stdout, stderr) => {
         if(err) throw err
         if(stdout) console.log(`CREATE FOLDER:  ${name}/instance`)
         console.log(stderr)
@@ -1447,8 +1543,8 @@ let writeFiles = (name) => {
 //Empty project Scafold
 let emptypro = (name) => {
     let winenv = () => {
-        coreScafolding(name)
-        cp.execSync(`type null>${name}/${name}.db`, (err, stdout, stderr) => {
+        coreScaffoldingWin(name)
+        cp.execSync(`type nul > ${name}/${name}.db`, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`CREATE FOLDER:  ${name}/instance`)
             console.log(stderr)
@@ -1497,7 +1593,7 @@ let emptypro = (name) => {
     }
 
     let unixenv = () => {
-        coreScafolding(name)
+        coreScaffolding(name)
         cp.execSync(`touch ${name}/${name}.db`, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`CREATE FOLDER:  ${name}/instance`)
@@ -1537,8 +1633,8 @@ let emptypro = (name) => {
 
 let flaskapi = (name) =>{
     let winenv = () => {
-        coreScafolding(name)
-        cp.execSync(`type null>${name}/${name}.db`, (err, stdout, stderr) => {
+        coreScafFoldingWin(name)
+        cp.execSync(`type nul > ${name}/${name}.db`, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`CREATE FOLDER:  ${name}/instance`)
             console.log(stderr)

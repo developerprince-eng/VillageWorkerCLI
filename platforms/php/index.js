@@ -3,7 +3,7 @@ PROJECT TITLE           : BoomSlangCLI
 PROJECT ALIAS           : fluid-serpent
 PROJECT OWNER           : DeveloperPrince
 PROJECT LEAD            : DeveloperPrince (Prince Kudzai Maposa)
-AFFILIATION             : Semina
+AFFILIATION             : Tech Village
 PROJECT CONTRIBUTORS    : Tinashe Mabika
 PROJECT BRIEF           : This is command line interface which will enable developers to scaffold 
                           project of any nature which are ai based, currently focusing 
@@ -26,7 +26,7 @@ let cod3 = (name) => {
             console.log(stderr)
         })
        
-        cp.execSync(`cp ~/usr/lib/node_modules/villageworkcli-work/templates/codeigniter/3/ /$name`, (err, stdout, stderr) => {
+        cp.execSync(`copy C:\\Users\\{username}\\AppData\\Roaming\\npm\\node_modules\\villageworkcli-work\\templates\\codeigniter\\3 /$name`, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`Copied Core Files to  ${name} Folder`)
             console.log(stderr)
@@ -62,7 +62,7 @@ let cod3 = (name) => {
             console.log(stderr)
         })
        
-        cp.execSync(`cp -r /usr/lib/node_modules/villageworkcli-work/templates/codeigniter/3/ ${name}`, (err, stdout, stderr) => {
+        cp.execSync(`cp -r ~/usr/lib/node_modules/villageworkcli-work/templates/codeigniter/3/ ${name}`, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`Copied Core Files to  ${name} Folder`)
             console.log(stderr)

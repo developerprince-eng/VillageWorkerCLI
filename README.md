@@ -2,15 +2,20 @@
 
 ![DeveloperPrince](https://developerprince.herokuapp.com/static/assets/images/logo.png)
 
-A command Line Interface used for automating Project Scafolding (Codename: anolis)
+A command Line Interface used for automating Project Scaffolding (Codename: anolis)
 
-## Commnads
+## Commands
 
-To Initiate Project Scafolding the CLI currently supports project scaffolding for nodejs application for 3 View Types, which is Angular, React & Vue Projects and this also allows to scaffold an Empty project is you desire to be outcome. This CLI also scaffolds mobile application development by using ionic aswell. The Scaffolding now offers python project scaffolding for flask based projects, ASP.NET Core project, php web application
+To Initiate Project Scaffolding the CLI currently supports project scaffolding for nodejs application for 3 View Types, which is Angular, React & Vue Projects and this also allows to scaffold an Empty project is you desire to be outcome. This CLI also scaffolds mobile application development by using ionic as well. The Scaffolding now offers python project scaffolding for flask based projects, ASP.NET Core project, php web application
 
-The Current Version which is version 1.1.13 is still in is Alpha form therefore you shall see rapid evolution of CLI as we progress with project with the Dev Team (Kubaki & Semina). 
+The Current Version which is version 1.1.14 is still in is Alpha form therefore you shall see rapid evolution of CLI as we progress with project.
 
 Currently the only operating system which allows for Scaffolding is Win32 OS & Unix.
+
+## Dependencies
+
+1. [Express-Generator](https://expressjs.com/en/starter/generator.html)
+2. 
 
 ## Requirements
 
@@ -18,11 +23,16 @@ Before You rock on using some crazy project automation, you need the following t
 
 1.) node and npm should be installed (Assumptions is you are viewing this from npm js you probably have that setup) [nodejs.org](https://nodejs.org/en/)
 
-2.) The Next step is you need to set up is hub for github cli an automation  cli, install scoop for windows using **powershell**        (This doesn't work with cmd  but only with **powershell**). If you are using Linux system I happy to announce that powershell is now       crossplatform there you can get it [here](https://github.com/powershell/powershell).(We will be glade to have you try this out      in linux, but it should work.)
+2.) The Next step is you need to set up is hub for github cli an automation  cli, install scoop for windows using **powershell**        (This doesn't work with cmd  but only with **powershell**). If you are using Linux system I happy to announce that powershell is now cross-platform there you can get it [here](https://github.com/powershell/powershell).(We will be glade to have you try this out      in linux, but it should work.)
 
 #### NOTE: 
 
-Powershell is now also available for Unix based system and you can execute and run powershell in an Unix Environment. Take note if you are using Legacy Unix Base OS's you are likely going to run Powershell especially on Ubuntu. In the event you are using Distros such as POP Os they don't come with libicu6 and other libraries which are essential to support and run powershell. Our Dev Community are tirelessy working on increasing support and experience for all developers and Systems.
+Powershell is now also available for Unix based system and you can execute and run powershell in an Unix Environment. Take note if you are using Legacy Unix Base OS's you are likely going to run Powershell especially on Ubuntu. In the event you are using Distros such as POP Os they don't come with libicu6 and other libraries which are essential to support and run powershell. Our Dev Community are tirelessly working on increasing support and experience for all developers and Systems.
+
+## WARNING 
+
+Currently the CLI works with **unix** and **linux** based environments it is currently very unstable with **windows** environment, We are working tirelessly to make it stable with Windows. You can attempt to use linux subsystem in windows but hub will not be configure therefore projects will be scaffolded with connecting to your github.
+
 
 #### For Win32 Environment(For Windows)
 
@@ -37,20 +47,18 @@ Powershell is now also available for Unix based system and you can execute and r
 
  #### For Unix Environment 
 
- For Unix Based Environment You can install hub directly withouth the use of a scoop as scoop is for windows based users
+ For Unix Based Environment You can install hub directly without the use of a scoop as scoop is for windows based users
 
  ```bash
-##Linux Distro
-sudo apt install hub
-
-##Debian Disto
-sudo apt-get install hub
+##Linux Ubuntu
+sudo snap install hub --classic
 ```
+
 
 3.) Download and install [git](https://git-scm.com/downloads) if not installed on machine.
 
-4.) In your root folder for probably in Documents (for this you probably need to even modify to a        more secure folder setup, but just use Documents for now). generate and ssh key both public and      private key which enable you to ssh to github then once you are done you copy the public key to      github [settings](https://github.com/settings/keys)
-    i) In your Root Folder to create the ssh keys run gitbash (you can do this by right click you mouse on the keypad and select the option `Git Bash Here`) a bash console should open and run the following or execute the following command:
+4.) In your root folder for probably in Documents (for this you probably need to even modify to a  more secure folder setup, but just use Documents for now). generate and ssh key both public and      private key which enable you to ssh to github then once you are done you copy the public key to      github [settings](https://github.com/settings/keys)
+    i) In your Root Folder to create the ssh keys run git bash (you can do this by right click you mouse on the keypad and select the option `Git Bash Here`) a bash console should open and run the following or execute the following command:
 ```bash
 ssh-keygen
 >Generating public/private rsa key pair.
@@ -139,7 +147,7 @@ villageworkcli add-ssh <path to public ssh>
 ```
 
 #### NOTE: 
-config might run into errors in deployment is so please contact [Developer Prince](prince@techvillage.org.zw) or manually set up. with the above steps. In addtion config does not support automated HerokuCLI installation and setup
+config might run into errors in deployment is so please contact [Developer Prince](prince@techvillage.org.zw) or manually set up. with the above steps. In addition config does not support automated HerokuCLI installation and setup
 
 Now that we are done let do the magic I suggest for scaffolding a new project you need to used git bash if on windows if on linux just use bash. The create directory of where you want scaffold a project and run your console in th create folder perform step: 5 in the `Requirements` section once an ssh section is created then either of the following commands, and see magic happen.
 
@@ -182,7 +190,7 @@ villageworkcli web-dotnet <project name> rest --generate --project
 
 ## Web PHP Developement Support 
 
-You can scafold a php based web project firstly using codeignter framework later will support laravel
+You can scaffold a php based web project firstly using codeignter framework later will support laravel
 
 ```bash
 ##CODEIGNITER PROJECT USING VERSION 3 
@@ -191,8 +199,8 @@ villageworkcli web-php <project name> cod3 --generate --project
 
 ## Web Python Flask Development Support
 
-villageworkcli now suppports flask development set up from you locally machine and commits a git repo both locally and remotely.
-Currently the Version is highly unstable as it is undergoing rapid proto typing and alterations.
+villageworkcli now supports flask development set up from you locally machine and commits a git repo both locally and remotely.
+Currently the Version is highly unstable as it is undergoing rapid prototyping and alterations.
 
 ```bash
 ##Empty Flask MVC Project:
@@ -204,7 +212,7 @@ villageworkcli web-py <project name> rest --generate --project
 We are glad to announce the pre-release of added functionality where one can add collaborators via the interface and the list all the contributors for project on github.
 
 ```bash
-##Add Colloborator
+##Add Collaborator
 villageworkcli add-contributor <collaboID> <userGitHubID> <username> <password> <repo> 
 
 ##List Collaborators
@@ -212,19 +220,19 @@ villageworkcli list-contributors <username> <password> <repo>
 ```
 ## Contact 
 
-This is a product of Kubaki Developer Team suported by Semina (Automation and AI specialists) led by Developer Prince, Lead Developer and System Technological Officer at the Techvillage. 
+Supported by  Developer Prince, Lead Developer and former System Technological Officer at the Tech Village. 
 
-Automation Design and Strategy is being cordinated by Semina a Startup which looks into Engineering Solutions for Corporations and Startups. 
+Automation Design and Strategy is being coordinated by Developer Prince. 
 
 The Product is under the MIT Licence.
 
-The product is meant for Village Work an Infrastructure within the Techvillage which manages workflow.
+The product is meant to be an Open Source project for Village Work an Infrastructure within the Tech Village which manages workflow.
 
 ## Future 
 
-The Village Work CLI will also adopt scafolding for the python based applications and php based web applications which will be relised in the future, therefore future realises will have the following: 
+The Village Work CLI will also adopt scaffolding for the python based applications and php based web applications which will be released in the future, therefore future releases will have the following: 
 
-### 1.)Automated Deployement Intergation
+### 1.)Automated Deployment Integration
 
 Villagework-CLI will have automated deployment for the following cloud platforms:
 
@@ -236,22 +244,22 @@ Villagework-CLI will have automated deployment for the following cloud platforms
 
 #### Google Cloud Platform
 
-### 2.)Automated Trello Intergration
+### 2.)Automated Trello Integration
 
-Villagework-CLI will have automated intergration to trello during project initiation and deployement 
+Villagework-CLI will have automated integration to Trello during project initiation and deployment 
 
 ### 3.)Automated Project Documentation
 
-Villagework-CLI will also assist and Guide developers to document their projetcts effectively
+Villagework-CLI will also assist and Guide developers to document their projects effectively
 
 ### 4.)Automated Maintenance
 
-Villagework-CLI will have automated maintenance which invoke continous deployement and continous intergration.
+Villagework-CLI will have automated maintenance which invoke continuos deployment and continuos integration.
 
 
 ## Contributors
 
 1. Developer Prince
-2. Bukhosi Moyo
+
 
 
